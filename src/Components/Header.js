@@ -8,10 +8,9 @@ class Header extends Component{
              <div className = "Header">
           <nav id ="nav">
             <NavLink to = '/'> Home </NavLink>
-            <NavLink to = '/'> Login </NavLink>
-            <NavLink to = '/'> Register </NavLink>
+            <NavLink to = '/login'> Login </NavLink>
+            <NavLink to = '/register'> Register </NavLink>
 
-            
             </nav>
             </div>
         )
