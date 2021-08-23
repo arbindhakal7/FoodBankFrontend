@@ -1,4 +1,5 @@
 import { Component } from "react";
+import axios from "axios";
 
 class Register extends Component{
 
@@ -15,6 +16,18 @@ onChangeRegister=(e)=>{
   })
 }
 
+funRegister=(e) =>{
+  //prevents from dataloss
+  e.preventDefault()
+  //send data to our API
+  const data ={
+      username: this.state.username,
+      email: this.state.email,
+      phonenumber: this.state.phonenumber,
+      password: this.state.password
+  }
+   axios.post("http://localhost:90/user/register", data)
+}
 
     render(){
         return(
@@ -26,27 +39,27 @@ onChangeRegister=(e)=>{
                 <form method="POST" class="register-form" id="register-form">
                   <div class="form-group">
                     <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                    <input type="text" name="name" placeholder="Full Name" />
+                    <input type="text" name="name" placeholder="Full Name"
+                    value = {this.state.username} onChange = {this.onChangeRegister} />
                   </div>
                   <div class="form-group">
                     <label for="email"><i class="zmdi zmdi-email"></i></label>
-                    <input type="email" name="email" placeholder="Your Email" />
+                    <input type="email" name="email" placeholder="Your Email" 
+                    value = {this.state.email} onChange = {this.onChangeRegister}/>
                   </div>
                   <div class="form-group">
                     <label for="email"><i class="zmdi zmdi-email"></i></label>
-                    <input type="number" name="phonenumber" placeholder="Phone Number" />
+                    <input type="number" name="phonenumber" placeholder="Phone Number" 
+                    value = {this.state.phonenumber} onChange = {this.onChangeRegister}/>
                   </div>
                   <div class="form-group">
                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="password" name="password" placeholder="Password"
+                    value = {this.state.password} onChange = {this.onChangeRegister} />
                   </div>
-               
-                  <div class="form-group">
-                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="/#" class="term-service">Terms of service</a></label>
-                  </div>
+
                   <div class="form-group form-button">
-                    <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                    <input type="submit" name="signup" class="form-submit" value="Register" onClick ={this.funRegister}/>
                   </div>
                 </form>
               </div>
