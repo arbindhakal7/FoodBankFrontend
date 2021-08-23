@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Route, Switch } from 'react-router-dom'
 import Home from "./Home";
+import Login from "./Login";
 import Register from "./Register";
 class Start extends Component {
     render() {
@@ -9,8 +10,9 @@ class Start extends Component {
             <div className="Start">
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/" component ={Register} />
-                 
+                    <Route path="/register" component ={Register} />
+                    <Route path="/login" component ={Login} />
+            
                  </Switch>
             </div>
 
