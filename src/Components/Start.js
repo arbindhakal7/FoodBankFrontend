@@ -1,9 +1,11 @@
 import { Component } from "react";
 import { Route, Switch } from 'react-router-dom'
+import AddDonation from "./AddDonation";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
 import UserDashboard from "./UserDashboard";
+
 class Start extends Component {
     render() {
         return (
@@ -14,6 +16,7 @@ class Start extends Component {
                     <Route path="/register" component ={Register} />
                     <Route path="/login" component ={Login} />
                     <Route path="/userdash" component ={UserDashboard} />
+                    <Route path="/userdashboard/adddonation" component ={AddDonation} />
             
                  </Switch>
             </div>

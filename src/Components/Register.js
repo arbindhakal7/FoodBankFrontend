@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
+import HomeNavBar from "../HomeNav";
 
 class Register extends Component{
 
@@ -31,6 +32,8 @@ funRegister=(e) =>{
 
     render(){
         return(
+          <div className = "Nav">
+            <HomeNavBar/>
             <div class="main">
             <section class = "sign-up">
             <div class="signup-content">
@@ -71,6 +74,7 @@ funRegister=(e) =>{
           
             </div>
             </section>
+            </div>
             </div>
         )
     }

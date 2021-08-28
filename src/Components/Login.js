@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
+import HomeNavBar from "../HomeNav";
 
 class Login extends Component{
     state={
@@ -39,6 +40,9 @@ class Login extends Component{
     }
     render(){
         return(
+            <div className = "Nav">
+            <HomeNavBar/>
+        
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
@@ -67,7 +71,7 @@ class Login extends Component{
                     </div>
                 </div>
             </div>
-        
+</div>
 
     
         )
