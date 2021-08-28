@@ -21,6 +21,12 @@ class Login extends Component{
             email: this.state.email,
             password: this.state.password
         }
+        login(data).then(res => {
+            if (res) {
+              this.props.history.push(`/userdash/:id`)
+            }
+          })
+          e.preventDefault()
          axios.post("http://localhost:90/user/login", data)
          .then((response)=>{
              console.log(response.data.t)
@@ -67,5 +73,21 @@ class Login extends Component{
         )
     }
 }
+
+const login = user => {
+    return axios
+      .post('http://localhost:90/user/login', {
+        email: user.email,
+        password: user.password
+      })
+      .then(res => {
+        localStorage.setItem('token', res.data.t)
+        console.log(res)
+        return res.data
+      })
+      .catch(err => {
+        console.log('Invalid username and password, ' + err)
+      })
+  }
 
 export default Login
