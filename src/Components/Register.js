@@ -65,7 +65,7 @@ funRegister=(e) =>{
               </div>
               <div class="signup-image">
                 <figure><img src="images/signup-image.jpg" alt="sign up image"/>
-                  <a href="/#" class="signup-image-link">I am already member</a>
+                  {/* <a href="/#" class="signup-image-link">I am already member</a> */}
                 </figure>
               </div>
           
