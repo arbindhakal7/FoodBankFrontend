@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-import HomeNavBar from "../HomeNav";
+import HomeNavBar from "./HomeNav";
 
 class Register extends Component{
 
