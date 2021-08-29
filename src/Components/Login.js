@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 import HomeNavBar from "./HomeNav";
 
 class Login extends Component{
@@ -65,6 +66,8 @@ class Login extends Component{
                             
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" onClick ={this.funLogin}/>
+                                <p class="copyright">Don't have an account? <Link to='./Register' >Register Here</Link></p>
+
                             </div>
                         </form>
                         

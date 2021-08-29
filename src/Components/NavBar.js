@@ -34,22 +34,22 @@ export default function NavBar(props) {
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
                                     <div class="dropdown-menu">
-                                        <a href="login" class="dropdown-item">View Profile</a>
-                                        <a href="login" class="dropdown-item">Edit Profile</a>
+                                        <a href="viewprofile" class="dropdown-item">View Profile</a>
+                                        <a href="editprofile" class="dropdown-item">Edit Profile</a>
                                     </div>
                                 </div>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Donate</a>
                                     <div class="dropdown-menu">
-                                        <a href="login" class="dropdown-item">Add Donations</a>
-                                        <a href="login" class="dropdown-item">View Donations</a>
+                                        <a href="adddonation" class="dropdown-item">Add Donations</a>
+                                        <a href="viewdonations" class="dropdown-item">View Donations</a>
                                     </div>
                                 </div>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Requests</a>
                                     <div class="dropdown-menu">
-                                        <a href="login" class="dropdown-item">Add Request</a>
-                                        <a href="login" class="dropdown-item">View Request</a>
+                                        <a href="addrequests" class="dropdown-item">Add Request</a>
+                                        <a href="viewrequests" class="dropdown-item">View Request</a>
                                     </div>
                                 </div>
                                 <li class="nav-item"><a href="#" class="nav-link">Food Bank</a></li>
