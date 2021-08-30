@@ -51,6 +51,7 @@ export default class UserDashboard extends Component{
     render() {
         return(
             <div>
+                
                 <NavBar history = {this.props.history}/>
                
             </div>

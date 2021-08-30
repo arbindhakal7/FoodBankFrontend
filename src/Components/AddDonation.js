@@ -8,6 +8,7 @@ export default class AddDonation extends Component {
 
     constructor(props) {
         super(props)
+        
 
         this.state = {
             foodname: '',
@@ -67,6 +68,16 @@ export default class AddDonation extends Component {
 
                         </Input>
                     </FormGroup>
+
+                    
+                    <FormGroup>
+                            <Label for='foodname'>Food Name</Label>
+                            <Input type='text' name='foodname' id='foodname'
+                                value={this.state.foodname}
+                                onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        
                     <Form>
                         <FormGroup>
                             <Label for='country'>Country</Label>
@@ -75,20 +86,7 @@ export default class AddDonation extends Component {
                                 onChange={this.handleChange}
                             />
                         </FormGroup>
-                        <FormGroup>
-                            <Label for='foodname'>Country</Label>
-                            <Input type='text' name='foodname' id='foodname'
-                                value={this.state.foodname}
-                                onChange={this.handleChange}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for='state'>State</Label>
-                            <Input type='text' name='state' id='state'
-                                value={this.state.state}
-                                onChange={this.handleChange}
-                            />
-                        </FormGroup>
+ 
                         <FormGroup>
                             <Label for='district'>District</Label>
                             <Input type='text' name='district' id='district'
@@ -104,13 +102,6 @@ export default class AddDonation extends Component {
                                 onChange={this.handleChange}
                             />
 
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for='location'>Location</Label>
-                            <Input type='text' name='location' id='location'
-                                value={this.state.location}
-                                onChange={this.handleChange}
-                            />
                         </FormGroup>
 
                         <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>

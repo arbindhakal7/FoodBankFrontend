@@ -16,9 +16,9 @@ class Start extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/register" component ={Register} />
                     <Route path="/login" component ={Login} />
-                    <Route path="/userdash/" component ={UserDashboard} />
+                    <Route path="/userdashboard" component ={UserDashboard} />
                     
-                    <PrivateRoute path="/userdashboard/adddonation" component ={AddDonation} />
+                    <PrivateRoute path="/userdash/adddonation" component ={AddDonation} />
             
                  </Switch>
             </div>
