@@ -8,7 +8,8 @@ export default class AddRequest extends Component{
     render(){
         return(
             <div>
-              
+               <NavBar history = {this.props.history}/>
+  
         </div>
         )
     }
