@@ -12,60 +12,51 @@ export default function NavBar(props) {
     }
 
     return (
+        <div>
+        
+        <Navbar color='dark' dark expand='md'>
+        <Nav id="nav" className='mr-auto' >
+                <ul id="navul">
+                <NavItem id="navitem">
+                        <Link to='/userdash/nav'>Dashboard</Link>                            
+                    </NavItem>
+                   <NavItem id="navitem">
+                        <Link to='/userdash/nav'>User Profile</Link>
+                        <ul>
+                            <Link to='/userdashboard/viewprofiledetails' id="navlist">View Profile</Link>
+                            <Link to='/userdashboard/profile/:id' id="navlist">Edit Profile</Link>
+                        </ul>
+                    </NavItem>
+                    <NavItem id="navitem">
+                        <NavLink to='/userdash/nav'>Donate</NavLink>
+                        <ul>
+                            <Link to='/userdashboard/adddonation' id="navlist">Add Donation</Link>
+                            <Link to='/userdashboard/viewdonation' id="navlist">View Donations</Link>
+                        </ul>
+                    </NavItem >
+                    <NavItem id="navitem">
+                        <NavLink to='/userdash/nav'>Requests</NavLink>
+                        <ul>
+                            <Link to='/userdashboard/addrequest' id="navlist">Add Request</Link>
+                            <Link to='/userdashboard/viewrequest' id="navlist">View Request</Link>
+                        </ul>
+                    </NavItem>
+                    <NavItem id="navitem">
+                        <NavLink to='/userdashboard/foodBank'>Food Bank</NavLink>
+                    </NavItem>
+                </ul>
+            </Nav>
+            <NavbarText>
+            <Button id="btn-logout" onClick={handleLogout} color='danger'>Logout</Button>
+            </NavbarText>
+        </Navbar>
+        <Switch>
+          
+        </Switch>
+    </div>
 
-        <section class="ftco-section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section">User Dashboard</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
-                    <div class="container">
-                        <a class="navbar-brand" href="index.html"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="fa fa-bars"></span> Menu
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="ftco-nav">
-                            <ul class="navbar-nav ml-auto mr-md-3">
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
-                                    <div class="dropdown-menu">
-                                        <a href="viewprofile" class="dropdown-item">View Profile</a>
-                                        <a href="editprofile" class="dropdown-item">Edit Profile</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Donate</a>
-                                    <div class="dropdown-menu">
-                                        <a href="adddonation" class="dropdown-item">Add Donations</a>
-                                        <a href="viewdonations" class="dropdown-item">View Donations</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Requests</a>
-                                    <div class="dropdown-menu">
-                                        <a href="addrequests" class="dropdown-item">Add Request</a>
-                                        <a href="viewrequests" class="dropdown-item">View Request</a>
-                                    </div>
-                                </div>
-                                <li class="nav-item"><a href="#" class="nav-link">Food Bank</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link"></a></li>
-                                <li class="dropdown nav-item d-md-flex align-items-center">
-                                </li>
-                            </ul>
-                            <NavbarText>
-                                <Button id="btn-logout" onClick={handleLogout} color='danger'>Logout</Button>
-                            </NavbarText>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-        </section>
+        
+        
     )
 }
 

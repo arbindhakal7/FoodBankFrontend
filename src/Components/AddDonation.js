@@ -16,6 +16,7 @@ export default class AddDonation extends Component {
             country: '',
             district: '',
             street: '',
+            phone: '',
             config: {
                 headers: { 'Authorization': localStorage.getItem('token') }
             }
@@ -45,7 +46,7 @@ export default class AddDonation extends Component {
         axios.post('http://localhost:90/api/DonateFood', this.state, this.state.config)
             .then((res) => {
                 console.log(res)
-                this.props.history.push('/userdashboard/viewdonations')
+                this.props.history.push('/userdash/adddonation')
             }).catch(err => console.log(err.response.data))
 
     }
@@ -64,6 +65,7 @@ export default class AddDonation extends Component {
                             <option value='' >Select Food Type </option>
                             <option value='stored'>Stored</option>
                             <option value='fresh'>Fresh</option>
+                            <option value = 'cooked'>Cooked</option>
                             <option value='any'>Any of the above</option>
 
                         </Input>
@@ -78,7 +80,7 @@ export default class AddDonation extends Component {
                             />
                         </FormGroup>
                         
-                    <Form>
+                    
                         <FormGroup>
                             <Label for='country'>Country</Label>
                             <Input type='text' name='country' id='country'
@@ -104,9 +106,19 @@ export default class AddDonation extends Component {
 
                         </FormGroup>
 
+                        <FormGroup>
+                            <Label for='phone'>Phone Number</Label>
+                            <Input type='number' name='phone' id='phone'
+                                value={this.state.phone}
+                                onChange={this.handleChange}
+                            />
+
+                        </FormGroup>
+
+                        
                         <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>
                         <Button block color='danger' onClick={() => this.props.history.push('/userdash/nav')}>Cancel</Button>
-                    </Form>
+                   
                 </div>
             </div>
         )

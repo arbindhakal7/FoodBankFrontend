@@ -1,7 +1,13 @@
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import React from 'react';
+import './css/style.css'
+// import './css/skel.css'
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './Components/Header';
 import { BrowserRouter } from 'react-router-dom';
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Start from './Components/Start';
 
 function App() {
