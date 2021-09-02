@@ -5,7 +5,23 @@ import NavBar from './NavBar'
 
 
 export default class AddRequest extends Component{
+    constructor(props) {
+        super(props)
 
+        this.state = {
+           
+            requestName:'',
+            phone:'',
+            country: '',
+            foodtype: '',
+            district: '',
+            street: '',
+            date: '',
+            config: {
+                headers: { 'Authorization': localStorage.getItem('token') }
+            }
+        }
+    }
    
     render(){
         return(
