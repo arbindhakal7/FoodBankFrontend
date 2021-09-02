@@ -28,7 +28,16 @@ export default class AddRequest extends Component{
             [event.target.name]: event.target.value
         }, () => console.log(this.state))
     }
-    
+
+    handleSubmit = (event) => {
+        if (window.confirm('Are you ready to request Food?'))
+            event.preventDefault();
+        axios.post('http://localhost:90/api/RequestFood', this.state, this.state.config)
+            .then((res) => {
+                console.log(res)
+                this.props.history.push('/userdash/addreqest')
+            }).catch(err => console.log(err.response.data))
+        }
     render(){
         return(
             <div>
