@@ -2,9 +2,11 @@ import React, {Component} from 'react'
 import { Form, FormGroup, Label, Input, Button} from 'reactstrap'
 import axios from 'axios'
 import NavBar from './NavBar'
+import jwt_decode from 'jwt-decode'
 
 
 export default class AddRequest extends Component{
+
     constructor(props) {
         super(props)
 
@@ -28,7 +30,6 @@ export default class AddRequest extends Component{
             [event.target.name]: event.target.value
         }, () => console.log(this.state))
     }
-
     handleSubmit = (event) => {
         if (window.confirm('Are you ready to request Food?'))
             event.preventDefault();
@@ -37,7 +38,11 @@ export default class AddRequest extends Component{
                 console.log(res)
                 this.props.history.push('/userdash/addreqest')
             }).catch(err => console.log(err.response.data))
-        }
+
+    }
+    // handleEdit = (requestId) => {
+    //     this.props.history.push(`/userdash/RequestFood/${requestId}`);
+    // }
     render(){
         return(
             <div>
@@ -48,20 +53,23 @@ export default class AddRequest extends Component{
                 <FormGroup>
                     <Label for="requestName">Full Name</Label>
                     <Input type='text' name='requestName' id='requestName'
-                
+                     value ={this.state.requestName}
+                     onChange={this.handleChange}
                      />
                 </FormGroup>
                 <FormGroup>
                     <Label for='phone'>Phone Number </Label>
                     <Input type='number' name='phone' id='phone'
-                     
+                     value ={this.state.phone}
+                     onChange={this.handleChange}
                     />
                      <FormGroup>
 
                      <FormGroup>
                 <Label for='foodtype'>Food Type</Label>
                 <Input type='select' name='foodtype' id='foodtype'
-            
+                value ={this.state.foodtype}
+                onChange={this.handleChange}
                 >
                     <option value=''>Select Requirement Type</option>
                     <option value='fresh'>fresh</option>
@@ -74,21 +82,24 @@ export default class AddRequest extends Component{
 
                     <Label for='country'>Country</Label>
                     <Input type='text' name='country' id='country'
-                    
+                     value ={this.state.country}
+                     onChange={this.handleChange}
                     />
                 </FormGroup>
                 
                 <FormGroup>
                     <Label for='district'>District</Label>
                     <Input type='text' name='district' id='district'
-                    
+                     value ={this.state.district}
+                     onChange={this.handleChange}
                     />
                 </FormGroup>
              
                     <FormGroup>
                     <Label for='street'>Street</Label>
                     <Input type='text' name='street' id='street'
-                    
+                     value ={this.state.street}
+                     onChange={this.handleChange}
                     />
                 
                 </FormGroup>
@@ -96,13 +107,14 @@ export default class AddRequest extends Component{
                 <FormGroup>
                     <Label for='date'>Date</Label>
                     <Input type='datetime-local' name='date' id='date'
-                  
+                     value ={this.state.date}
+                     onChange={this.handleChange}
                          />
                          </FormGroup>
                   
         </FormGroup>            
-                <Button block color="primary" >Submit</Button>
-                <Button block color='danger' >Cancel</Button>
+                <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>
+                <Button block color='danger' onClick={() => this.props.history.push('/userdash')}>Cancel</Button>
             </Form>
             
         </div>
