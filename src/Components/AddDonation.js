@@ -11,7 +11,6 @@ export default class AddDonation extends Component {
         
 
         this.state = {
-            foodname: '',
             foodtype: '',
             country: '',
             district: '',
@@ -71,16 +70,6 @@ export default class AddDonation extends Component {
 
                         </Input>
                     </FormGroup>
-
-                    
-                    <FormGroup>
-                            <Label for='foodname'>Food Name</Label>
-                            <Input type='text' name='foodname' id='foodname'
-                                value={this.state.foodname}
-                                onChange={this.handleChange}
-                            />
-                        </FormGroup>
-                        
                     
                         <FormGroup>
                             <Label for='country'>Country</Label>
