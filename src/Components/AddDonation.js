@@ -17,6 +17,7 @@ export default class AddDonation extends Component {
             district: '',
             street: '',
             phone: '',
+            date: '',
             config: {
                 headers: { 'Authorization': localStorage.getItem('token') }
             }
@@ -35,7 +36,7 @@ export default class AddDonation extends Component {
             .then((res) => {
                 console.log(res.data)
                 this.setState({
-                    bloodGroup: res.data.foodtype,
+                    foodtype: res.data.foodtype,
                 })
 
             })
@@ -115,6 +116,13 @@ export default class AddDonation extends Component {
 
                         </FormGroup>
 
+                        <FormGroup>
+                    <Label for='date'>Date</Label>
+                    <Input type='datetime-local' name='date' id='date'
+                     value ={this.state.date}
+                     onChange={this.handleChange}
+                         />
+                    </FormGroup>
                         
                         <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>
                         <Button block color='danger' onClick={() => this.props.history.push('/userdash/nav')}>Cancel</Button>
