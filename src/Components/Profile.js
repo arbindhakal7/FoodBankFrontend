@@ -5,7 +5,24 @@ import jwt_decode from 'jwt-decode'
 import NavBar from './NavBar'
 
 export default class Profile extends React.Component{
-    
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            UserId: '',
+            fullname: '',
+            phone:'',
+            role:'',
+            email: '',
+            dateOfBirth: '',
+            gender: '',
+            image:'',
+            config: {
+                headers: { 'Authorization': localStorage.getItem('token') },
+                isUpdate: false
+            }
+        }
+    }
     render() {
         return(
             <div>
