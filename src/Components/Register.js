@@ -3,14 +3,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import HomeNavBar from "./HomeNav";
 
-class Register extends Component {
-
-  state = {
+export default class Register extends Component {
+  constructor(props) {
+    super(props)
+  this.state = {
     fullname: '',
     email: '',
     phone: '',
     password: ''
 
+  }
   }
   onChangeRegister = (e) => {
     this.setState({
@@ -22,13 +24,12 @@ class Register extends Component {
     //prevents from dataloss
     e.preventDefault()
     //send data to our API
-    const data = {
-      fullname: this.state.fullname,
-      email: this.state.email,
-      phone: this.state.phone,
-      password: this.state.password
-    }
-    axios.post("http://localhost:90/api/user/register", data)
+  
+    axios.post("http://localhost:90/api/user/register", this.state)
+    .then((res) => {
+      this.props.history.push('/')
+        
+  }).catch(err => console.log(err.response.data))
   }
 
   render() {
@@ -64,7 +65,7 @@ class Register extends Component {
 
                   <div class="form-group form-button">
 
-                    <input type="submit" name="signup" class="form-submit" value="Register" Button type ="reset" onClick={this.funRegister} />
+                    <input type="submit" name="signup" class="form-submit" value="Register"  onClick={this.funRegister} />
                     <p class="copyright">Already Registered? <Link to='./Login' >Login</Link></p>
 
                   </div>
@@ -83,4 +84,3 @@ class Register extends Component {
   }
 }
 
-export default Register
