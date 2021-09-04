@@ -30,6 +30,25 @@ export default class UserDashboard extends Component{
         }
     }
 
+    componentDidMount(){
+        const token = localStorage.getItem('token')
+        const decoded=jwt_decode(token)
+          this.setState({
+            username: decoded.username,
+            phone: decoded.phone,
+            role: decoded.role,
+            email:decoded.email ,
+            dateOfBirth: decoded.dateOfBirth,
+            gender: decoded.gender,
+            lastDonation:decoded.lastDonation,
+            lastRequest:decoded.lastRequest,
+            image:decoded.image,
+            UserId: decoded.id
+    
+            
+          })
+        }
+        
     
     render() {
         return(
