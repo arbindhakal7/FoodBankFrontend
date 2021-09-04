@@ -8,7 +8,27 @@ import users from '../css/images/users.png';
 
 export default class UserDashboard extends Component{
 
-    
+    constructor(props) {
+        super(props)
+        this.state = {
+            profileId:'',
+            username: '',
+            phone:'',
+            role:'',
+            email: '',
+            dateOfBirth: '',
+            gender: '',
+            lastDonation:'',
+            lastRequest:'',
+            foodbanks: [],
+            foodbankId:'',
+            FoodBankName: '',
+            availableFood:'',    
+            config: {
+                headers: { 'Authorization': localStorage.getItem('token') }
+            }
+        }
+    }
 
     
     render() {
