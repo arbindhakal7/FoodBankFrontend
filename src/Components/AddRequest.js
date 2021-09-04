@@ -36,7 +36,7 @@ export default class AddRequest extends Component{
         axios.post('http://localhost:90/api/RequestFood', this.state, this.state.config)
             .then((res) => {
                 console.log(res)
-                this.props.history.push('/userdash/addreqest')
+                this.props.history.push('/userdashboard/viewrequest')
             }).catch(err => console.log(err.response.data))
 
     }

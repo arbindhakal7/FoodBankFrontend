@@ -10,6 +10,8 @@ import AddDonation from "./AddDonation";
 import AddRequest from "./AddRequest";
 import ViewRequests from "./ViewRequest";
 import ViewDonations from "./ViewDonations";
+import Profile from "./Profile";
+import ViewProfileDetails from "./ViewProfileDetails";
 
 class Start extends Component {
     render() {
@@ -26,6 +28,8 @@ class Start extends Component {
                     <PrivateRoute path='/userdashboard/addrequest' component={AddRequest} />
                     <PrivateRoute path='/userdashboard/viewdonation' component={ViewDonations} />
                     <PrivateRoute path='/userdashboard/viewrequest' component={ViewRequests} />
+                    <PrivateRoute path='/userdashboard/profile/:id' component={Profile} />
+          <PrivateRoute path='/userdashboard/viewprofiledetails' component={ViewProfileDetails} />
                     
             <Route>
             <NoMatch />

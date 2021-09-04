@@ -28,25 +28,14 @@ export default class AddDonation extends Component {
 
         }, () => console.log(this.state))
     }
-    componentDidMount = () => {
-        const token = localStorage.getItem('token')
-        const decoded = jwt_decode(token)
-        axios.get('http://localhost:90/api/profile/' + decoded.id, this.state.config)
-            .then((res) => {
-                console.log(res.data)
-                this.setState({
-                    foodtype: res.data.foodtype,
-                })
 
-            })
-    }
     handleSubmit = (event) => {
         if (window.confirm('Are you ready to donate Food?'))
             event.preventDefault();
         axios.post('http://localhost:90/api/DonateFood', this.state, this.state.config)
             .then((res) => {
                 console.log(res)
-                this.props.history.push('/userdash/adddonation')
+                this.props.history.push('/userdashboard/viewdonation')
             }).catch(err => console.log(err.response.data))
 
     }

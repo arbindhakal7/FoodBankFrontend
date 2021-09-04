@@ -1,13 +1,22 @@
 import { Component } from "react";
 import axios from "axios";
+import { Redirect } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 import HomeNavBar from "./HomeNav";
 
-class Login extends Component{
-    state={
+export default class Login extends Component{
+   constructor(props){
+   super(props)
+    this.state={
         email: "",
-        password: ""
+        password: "",
+        isBasic: false,
+        isAdmin: false,
     }
+    this.onChangeLogin = this.onChangeLogin.bind(this)
+    this.funLogin = this.funLogin.bind(this)
+}
 
     onChangeLogin=(e)=>{
         this.setState({
@@ -29,18 +38,24 @@ class Login extends Component{
             }
           })
           e.preventDefault()
-         axios.post("http://localhost:90/user/login", data)
-         .then((response)=>{
-             console.log(response.data.t)
-             // saves the token so that you can get it anywhere in the website
-             localStorage.setItem('token', response.data.t)
-         })
-         .catch((err)=>{
-             console.log(err.response)
-         })
-    }
+         axios.post("http://localhost:90/api/user/login", data)
+         .then((res) => {
+            console.log(res);
+            localStorage.setItem('token',res.data.token);
+            let user = jwtDecode(res.data.token.split(' ')[1]);
+            if (user.role === 'admin') this.setState({ isAdmin: true })
+            else this.setState({ isBasic: true })
+            return res.data;
+        }).catch(err => console.log(err));
+}
     render(){
+        if (this.state.isAdmin) {
+            return <Redirect to='/admindash/:id' />
+        } else if (this.state.isBasic) {
+            return <Redirect to='/userdash/:id' />
+        }
         return(
+        
             <div className = "Nav">
             <HomeNavBar/>
         
@@ -83,18 +98,17 @@ class Login extends Component{
 
 const login = user => {
     return axios
-      .post('http://localhost:90/user/login', {
+      .post('http://localhost:90/api/user/login', {
         email: user.email,
         password: user.password
       })
-      .then(res => {
-        localStorage.setItem('token', res.data.t)
-        console.log(res)
-        return res.data
+      .then(response => {
+        localStorage.setItem('token', response.data.t)
+        console.log(response)
+        return response.data
       })
       .catch(err => {
-        console.log('Invalid username and password, ' + err)
+        console.log('Invalid email or password, ' + err)
       })
   }
 
-export default Login
