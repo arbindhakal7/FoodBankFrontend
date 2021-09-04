@@ -48,6 +48,29 @@ export default class Profile extends React.Component{
                 [event.target.name]: event.target.value
             }, ( ) => console.log(this.state))
         }
+        
+        handleSubmit = (event) => {
+            event.preventDefault();
+            const token = localStorage.getItem('token')
+            const decoded=jwt_decode(token)
+            if(window.confirm('Do you want to save changes?'))
+                axios.put("http://localhost:90/api/profile/" + decoded.id, this.state, this.state.config, {
+                        headers: { 'Authorization': localStorage.getItem('token') }
+                     })
+                    .then((res) => {
+                        this.setState({
+        
+                            fullname:'',
+                            phone:'',
+                            role:'',
+                            email: '',
+                            dateOfBirth: '',
+                            gender: '',
+                          
+                        })
+                        this.props.history.push('/userdashboard/viewprofiledetails')
+                    }).catch(err => console.log(err.response.data.message))
+            }
     
     render() {
         return(
