@@ -25,7 +25,7 @@ export default class ViewProfileDetails extends React.Component{
     componentDidMount= ()=> {
         const token = localStorage.getItem('token')
         const decoded=jwt_decode(token)
-         axios.get('http://localhost:3000/api/profile/' + decoded.id ,  this.state.config)
+         axios.get('http://localhost:90/api/profile/' + decoded.id ,  this.state.config)
          .then((res)=> {
              console.log(res.data)
              this.setState({
@@ -41,7 +41,7 @@ export default class ViewProfileDetails extends React.Component{
          })
             
         }
-        
+
     
     render() {
         return(
@@ -52,7 +52,7 @@ export default class ViewProfileDetails extends React.Component{
                 <section class="container">
                         <section class="4u">   
                             <h3>Your Info</h3>
-                            <p> Full Name : <i>{this.state.firstName} </i></p>
+                            <p> Full Name : <i>{this.state.fullname} </i></p>
                             <p>Phone: <i>{this.state.phone}</i></p>
                             <p>Role: <i>{this.state.role}</i></p>
                             <p>Email: <i>{this.state.email}</i></p>
