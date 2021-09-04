@@ -23,23 +23,30 @@ export default class Profile extends React.Component{
             }
         }
     }
-    componentDidMount(){
+    componentDidMount= ()=> {
         const token = localStorage.getItem('token')
         const decoded=jwt_decode(token)
-          this.setState({
-            username: decoded.username,
-            phone: decoded.phone,
-            role: decoded.role,
-            email:decoded.email ,
-            dateOfBirth: decoded.dateOfBirth,
-            gender: decoded.gender,
-            lastDonation:decoded.lastDonation,
-            lastRequest:decoded.lastRequest,
-            image:decoded.image,
-            UserId: decoded.id
+         axios.get('http://localhost:90/api/profile/' + decoded.id ,  this.state.config)
+         .then((res)=> {
+             console.log(res.data)
+             this.setState({
+                            fullname: res.data.fullname,
+                            phone: res.data.phone,
+                            role: res.data.role,
+                            email:res.data.email ,
+                            dateOfBirth: res.data.dateOfBirth,
+                            gender: res.data.gender,
+                            image:res.data.image,
+             })
     
+         })
             
-          })
+        }
+
+        handleChange = (event) => {
+            this.setState({
+                [event.target.name]: event.target.value
+            }, ( ) => console.log(this.state))
         }
     
     render() {
