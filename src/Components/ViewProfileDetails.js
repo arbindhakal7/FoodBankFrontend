@@ -5,7 +5,22 @@ import axios from 'axios'
 
 export default class ViewProfileDetails extends React.Component{
    
-   
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            fullname: '',
+            phone:'',
+            role:'',
+            email: '',
+            dateOfBirth: '',
+            gender: '',
+            config: {
+                headers: { 'Authorization': localStorage.getItem('token') },
+                isUpdate: false
+            }
+        }
+    }
     
     render() {
         return(
