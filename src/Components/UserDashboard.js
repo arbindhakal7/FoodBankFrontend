@@ -10,49 +10,29 @@ export default class UserDashboard extends Component{
         super(props)
         this.state = {
             profileId:'',
-            username: '',
+            fullname: '',
             phone:'',
             role:'',
             email: '',
             dateOfBirth: '',
             gender: '',
-            lastDonation:'',
-            lastRequest:'',
-            foodbanks: [],
-            foodbankId:'',
-            FoodBankName: '',
+            // foodbanks: [],
+            // foodbankId:'',
+            // FoodBankName: '',
             availableFood:'',    
             config: {
                 headers: { 'Authorization': localStorage.getItem('token') }
             }
         }
     }
-    
-    componentDidMount(){
-    const token = localStorage.getItem('token')
-    const decoded=jwt_decode(token)
-      this.setState({
-        username: decoded.username,
-        phone: decoded.phone,
-        role: decoded.role,
-        email:decoded.email ,
-        dateOfBirth: decoded.dateOfBirth,
-        gender: decoded.gender,
-        lastDonation:decoded.lastDonation,
-        lastRequest:decoded.lastRequest,
-        image:decoded.image,
-        UserId: decoded.id
 
-        
-      })
-    }
-
+     
     
     render() {
         return(
             <div>
                 <NavBar history = {this.props.history}/>
-
+                
             </div>
         )
     }

@@ -122,5 +122,3 @@ export default class AddDonation extends Component {
     }
 
 }
-
-

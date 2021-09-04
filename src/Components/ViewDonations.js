@@ -49,9 +49,3 @@ export default class ViewDonations extends Component {
   )
 }
 }
-
-
-
-
-
-

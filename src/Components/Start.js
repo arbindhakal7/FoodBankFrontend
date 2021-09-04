@@ -8,6 +8,7 @@ import Register from "./Register";
 import UserDashboard from "./UserDashboard";
 import AddDonation from "./AddDonation";
 import AddRequest from "./AddRequest";
+import ViewRequests from "./ViewRequest";
 import ViewDonations from "./ViewDonations";
 
 class Start extends Component {
@@ -24,6 +25,8 @@ class Start extends Component {
                     <PrivateRoute path='/userdashboard/adddonation' component={AddDonation} />
                     <PrivateRoute path='/userdashboard/addrequest' component={AddRequest} />
                     <PrivateRoute path='/userdashboard/viewdonation' component={ViewDonations} />
+                    <PrivateRoute path='/userdashboard/viewrequest' component={ViewRequests} />
+                    
             <Route>
             <NoMatch />
           </Route>
