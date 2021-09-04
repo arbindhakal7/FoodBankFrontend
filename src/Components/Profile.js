@@ -11,7 +11,55 @@ export default class Profile extends React.Component{
             <div>
                 <NavBar history = {this.props.history}/>
          
-          
+            <div className='container'>
+    <Form>
+
+    <FormGroup>
+    <Label for="lastName">Full Name</Label>
+        <Input name='lastName' type='text' 
+            />
+    </FormGroup>
+    <FormGroup>
+    <Label for="phone">Phone</Label>
+        <Input name='username' type='text' 
+           />
+    </FormGroup>
+    <FormGroup>
+    </FormGroup>
+        <FormGroup>
+            <Label for="email">Email</Label>
+            <Input type='email' name='email' id='email'
+           
+                
+                 />
+        </FormGroup>
+        <FormGroup>
+            <Label for='dateOfBirth'>Date Of Birth </Label>
+            <Input type='date' name='dateOfBirth' id='dateOfBirth'
+            
+            
+            />
+        </FormGroup>
+        
+        
+
+        <FormGroup>
+        <Label for='gender'>Gender</Label>
+        <Input type='select' name= 'gender' id='gender' 
+        
+        >
+            <option value=''>Select Gender</option>
+            <option value='male'>male</option>
+            <option value='female'>female</option>
+            <option value='other'>other</option>
+            
+            
+        </Input>
+    </FormGroup>
+        
+        <Button block color="primary" onClick={this.handleSubmit}>Update</Button>
+    </Form>
+</div>
 </div>
 
     )
