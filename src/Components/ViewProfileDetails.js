@@ -21,6 +21,27 @@ export default class ViewProfileDetails extends React.Component{
             }
         }
     }
+
+    componentDidMount= ()=> {
+        const token = localStorage.getItem('token')
+        const decoded=jwt_decode(token)
+         axios.get('http://localhost:3000/api/profile/' + decoded.id ,  this.state.config)
+         .then((res)=> {
+             console.log(res.data)
+             this.setState({
+                            fullname: res.data.fullname,
+                            phone: res.data.phone,
+                            role: res.data.role,
+                            email:res.data.email ,
+                            dateOfBirth: res.data.dateOfBirth,
+                            gender: res.data.gender,
+                            image:res.data.image,
+             })
+    
+         })
+            
+        }
+        
     
     render() {
         return(
