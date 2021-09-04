@@ -48,7 +48,7 @@ export default class Profile extends React.Component{
                 [event.target.name]: event.target.value
             }, ( ) => console.log(this.state))
         }
-        
+
         handleSubmit = (event) => {
             event.preventDefault();
             const token = localStorage.getItem('token')
@@ -72,7 +72,7 @@ export default class Profile extends React.Component{
                     }).catch(err => console.log(err.response.data.message))
             }
     
-    render() {
+     render() {
         return(
             <div>
                 <NavBar history = {this.props.history}/>
@@ -83,26 +83,30 @@ export default class Profile extends React.Component{
     <FormGroup>
     <Label for="lastName">Full Name</Label>
         <Input name='lastName' type='text' 
-            />
+            value={this.state.fullname}
+            onChange={this.handleChange} />
     </FormGroup>
     <FormGroup>
     <Label for="phone">Phone</Label>
         <Input name='username' type='text' 
-           />
+            value={this.state.phone}
+            onChange={this.handleChange} />
     </FormGroup>
     <FormGroup>
     </FormGroup>
         <FormGroup>
             <Label for="email">Email</Label>
             <Input type='email' name='email' id='email'
-           
+            value ={this.state.email}
+            onChange={this.handleChange}
                 
                  />
         </FormGroup>
         <FormGroup>
             <Label for='dateOfBirth'>Date Of Birth </Label>
             <Input type='date' name='dateOfBirth' id='dateOfBirth'
-            
+            value ={this.state.dateOfBirth}
+            onChange={this.handleChange}
             
             />
         </FormGroup>
@@ -112,7 +116,8 @@ export default class Profile extends React.Component{
         <FormGroup>
         <Label for='gender'>Gender</Label>
         <Input type='select' name= 'gender' id='gender' 
-        
+        value ={this.state.gender}
+        onChange={this.handleChange}
         >
             <option value=''>Select Gender</option>
             <option value='male'>male</option>
