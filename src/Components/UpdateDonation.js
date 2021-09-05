@@ -89,18 +89,21 @@ export default function UpdatedDonation(props) {
             <div>
                 
                 <NavBar history = {this.props.history}/>
-                <div className='container'>
+            
+            <div className='container'>
             <Form>
                 <FormGroup>
                     <Label for="phone">Phone Number</Label>
                     <Input type='number' name='phone' id='phone'
-                   
+                    value ={this.state.phone}
+                    onChange={this.handleChange}
                          />
                 </FormGroup>
                 <FormGroup>
             <Label for='foodtype'>Food Type</Label>
             <Input type='select' name='foodtype' id='foodtype' 
-            >
+            value ={this.state.foodtype}
+            onChange={this.handleChange} >
             <option value='' >Select Food Type</option>
             <option value='Fresh'>Fresh</option>
             <option value='Stored'>Stored</option>
@@ -111,31 +114,40 @@ export default function UpdatedDonation(props) {
                 <FormGroup>
                     <Label for='country'>Country</Label>
                     <Input type='text' name='country' id='country'
-                
+                    value ={this.state.country}
+                    onChange={this.handleChange}
                     />
                 </FormGroup>
                 
                 <FormGroup>
                     <Label for='district'>District</Label>
                     <Input type='text' name='district' id='district'
-                    
+                    value ={this.state.district}
+                    onChange={this.handleChange}
                     />
                 </FormGroup>
                
                     <FormGroup>
                     <Label for='street'>Street</Label>
                     <Input type='text' name='street' id='street'
-                    
+                    value ={this.state.street}
+                    onChange={this.handleChange}
                     />
                 
                 </FormGroup>
-                </Form>
+               
+
+                
+                <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>
+                {this.handleCancel()}
+                <Button block color='danger' onClick={this.setRedirect}>Cancel</Button>
+            </Form>
+        </div>
         </div>
         )
     }
     
 }
-
 
 
 
