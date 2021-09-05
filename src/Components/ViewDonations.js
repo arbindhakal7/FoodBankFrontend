@@ -77,10 +77,10 @@ componentDidMount() {
             {this.state.donatefoods.map(donation => (
               <tr key= {donation._id}>
                 <th scope="row"></th>
-            <td><td>{donation.country},
+            <td>{donation.country},
              {donation.district},
              {donation.street}
-            </td></td>
+            </td>
             <td>{donation.foodtype}</td>
             <td>{donation.phone}</td>
             <td>{donation.date}</td>
