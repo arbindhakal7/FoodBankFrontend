@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import Axios from 'axios'
 import NavBar from './NavBar'
-
-
+ 
 export default class ViewDonations extends Component {
     constructor(props) {
         super(props)
-
+ 
     this.state = {
+      donatefoods:[],
+ 
+        donateId: '', 
         foodtype: '',
         country: '',
         district: '',
@@ -16,11 +18,41 @@ export default class ViewDonations extends Component {
         phone: '',
         date: '',
         config: {
-            headers: { 'Authorization': localStorage.getItem('token') }
+          headers: { 'Authorization': localStorage.getItem('token') }
         }
-    }
+    };
 }
-
+ 
+handleDelete = (id) => {
+  if(window.confirm('Are you sure to delete this donation from the list?'))
+Axios.delete('http://localhost:90/api/DonateFood/' + id, this.state.config)
+.then((res)=> {
+  const filteredDonateFood = this.state.donatefoods.filter(req => {
+    return req._id !== id;
+  });
+  console.log(filteredDonateFood);
+  this.setState({
+    donatefoods: filteredDonateFood
+  });
+ 
+}).catch(err => console.log(err.response));
+}
+ 
+  handleUpdateClick = (id) => {
+    console.log(id)
+    this.props.history.push(`/userdashboard/updatedonation/${id}`);
+  }
+ 
+componentDidMount() {
+  Axios.get('http://localhost:90/api/DonateFood', this.state.config)
+      .then((res) => {
+          console.log(res.data)
+          this.setState({
+              donatefoods: res.data
+          })
+      }).catch(err => console.log(err.response));
+}
+ 
   render() {
   return (
     <div>
@@ -41,8 +73,30 @@ export default class ViewDonations extends Component {
               <th>Action</th>
             </tr>
           </thead>
-      
-      </table>
+          <tbody>
+            {this.state.donatefoods.map(donation => (
+              <tr key= {donation._id}>
+                <th scope="row"></th>
+            <td><td>{donation.country},
+             {donation.district},
+             {donation.street}
+            </td></td>
+            <td>{donation.foodtype}</td>
+            <td>{donation.phone}</td>
+            <td>{donation.date}</td>
+                <td>
+                
+                  <Link class="btn btn-outline-primary mr-2"
+                  onClick={() => this.handleUpdateClick(donation._id)}>
+                    Edit
+                  </Link>
+                  <Link to class="btn btn-danger"
+                  onClick={() => this.handleDelete(donation._id)}>Delete</Link>
+                </td>
+              </tr>
+              ))}
+          </tbody>
+        </table>
       </div>
       </div>
       </div>

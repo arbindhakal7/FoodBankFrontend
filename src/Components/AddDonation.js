@@ -36,7 +36,7 @@ export default class AddDonation extends Component {
             .then((res) => {
                 console.log(res)
                 this.props.history.push('/userdashboard/viewdonation')
-            }).catch(err => console.log(err.response.data))
+            }).catch(err => console.log(err.response))
 
     }
     render() {

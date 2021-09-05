@@ -59,7 +59,7 @@ export default class Login extends Component{
             <div className = "Nav">
             <HomeNavBar/>
         
-            <div class="container">
+            <div class="container-fluid">
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="images/signin-image.jpg" alt="sing up image"/></figure>
