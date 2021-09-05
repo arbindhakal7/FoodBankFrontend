@@ -41,6 +41,19 @@ export default function UpdatedDonation(props) {
         })
     }
 
+    handleSubmit = (event) => {
+        if(window.confirm('Are you sure to update your donation details?'))
+        event.preventDefault();
+		axios.put('http://localhost:90/api/DonateFood/' + this.props.id, this.state, this.state.config)
+		.then((res) => {
+            
+            console.log(res)
+            
+		}).catch(err => console.log(err.response.data));
+            
+    }
+    
+
     render(){
         return(
             <div>
