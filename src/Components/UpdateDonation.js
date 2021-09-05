@@ -34,3 +34,58 @@ export default function UpdatedDonation(props) {
             }
         }
     }
+    render(){
+        return(
+            <div>
+                
+                <NavBar history = {this.props.history}/>
+                <div className='container'>
+            <Form>
+                <FormGroup>
+                    <Label for="phone">Phone Number</Label>
+                    <Input type='number' name='phone' id='phone'
+                   
+                         />
+                </FormGroup>
+                <FormGroup>
+            <Label for='foodtype'>Food Type</Label>
+            <Input type='select' name='foodtype' id='foodtype' 
+            >
+            <option value='' >Select Food Type</option>
+            <option value='Fresh'>Fresh</option>
+            <option value='Stored'>Stored</option>
+            <option value='Cooked'>Cooked</option>
+            <option value='any'>Any of the above</option>
+            </Input>
+            </FormGroup>
+                <FormGroup>
+                    <Label for='country'>Country</Label>
+                    <Input type='text' name='country' id='country'
+                
+                    />
+                </FormGroup>
+                
+                <FormGroup>
+                    <Label for='district'>District</Label>
+                    <Input type='text' name='district' id='district'
+                    
+                    />
+                </FormGroup>
+               
+                    <FormGroup>
+                    <Label for='street'>Street</Label>
+                    <Input type='text' name='street' id='street'
+                    
+                    />
+                
+                </FormGroup>
+                </Form>
+        </div>
+        )
+    }
+    
+}
+
+
+
+
