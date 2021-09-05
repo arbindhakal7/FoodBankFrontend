@@ -52,6 +52,22 @@ export default function UpdatedDonation(props) {
 		}).catch(err => console.log(err.response.data));
             
     }
+
+    state ={
+        redirect: false
+    }
+    setRedirect = () => {
+        this.setState({
+            redirect:true
+        })
+    }
+    handleCancel = ()=> {
+        if (this.state.redirect){
+            return <Redirect to ='/userdashboard/viewdonation'/>
+       
+        }
+    }
+
     
 
     render(){
