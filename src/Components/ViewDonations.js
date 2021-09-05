@@ -9,14 +9,14 @@ export default class ViewDonations extends Component {
  
     this.state = {
       donatefoods:[],
- 
-        donateId: '', 
-        foodtype: '',
-        country: '',
-        district: '',
-        street: '',
-        phone: '',
-        date: '',
+      donorName:'',
+      donateId: '', 
+      foodtype: '',
+      country: '',
+      district: '',
+      street: '',
+      phone: '',
+      date: '',
         config: {
           headers: { 'Authorization': localStorage.getItem('token') }
         }
@@ -65,6 +65,7 @@ componentDidMount() {
           <thead class="thead-dark">
             <tr>
             <th scope="col">#</th>
+            <th scope="col">Name</th>
               <th scope="col">Address</th>
               <th scope="col">Phone</th>
               <th scope="col">Food Type</th>
@@ -77,12 +78,13 @@ componentDidMount() {
             {this.state.donatefoods.map(donation => (
               <tr key= {donation._id}>
                 <th scope="row"></th>
+                <td>{donation.donorName}</td>   
             <td>{donation.country},
              {donation.district},
              {donation.street}
             </td>
-            <td>{donation.foodtype}</td>
             <td>{donation.phone}</td>
+            <td>{donation.foodtype}</td>
             <td>{donation.date}</td>
                 <td>
                 

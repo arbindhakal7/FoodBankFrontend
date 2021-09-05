@@ -11,6 +11,7 @@ export default class AddDonation extends Component {
         
 
         this.state = {
+            donorName:'',
             foodtype: '',
             country: '',
             district: '',
@@ -46,6 +47,15 @@ export default class AddDonation extends Component {
                 <NavBar history={this.props.history} />
 
                 <div className='container'>
+
+                <FormGroup>
+                            <Label for='name'>Name</Label>
+                            <Input type='text' name='donorName' id='donorName'
+                                value={this.state.donorName}
+                                onChange={this.handleChange}
+                            />
+                        </FormGroup>
+
                     <FormGroup>
                         <Label for='foodtype'>Food Type</Label>
                         <Input type='select' name='foodtype' id='foodtype'

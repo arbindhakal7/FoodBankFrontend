@@ -7,7 +7,7 @@ import Login from "./Login";
 import Register from "./Register";
 import UserDashboard from "./UserDashboard";
 import AddDonation from "./AddDonation";
-import UpdateDonation from "./UpdateDonations";
+import UpdateDonation from "./UpdateDonation";
 import AddRequest from "./AddRequest";
 import ViewRequests from "./ViewRequest";
 import ViewDonations from "./ViewDonations";
