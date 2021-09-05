@@ -68,7 +68,21 @@ export default function UpdatedDonation(props) {
         }
     }
 
-    
+    componentDidMount = () => {
+		axios.get('http://localhost:90/api/DonateFood/' + this.state.id, this.state.config)
+		.then((res) => {
+			console.log(res);
+			this.setState({
+                foodtype: res.data.foodtype,
+				country: res.data.country,
+				phone: res.data.phone,
+				district: res.data.district,
+				street: res.data.street,
+				
+			})
+		}).catch(err => console.log(err.response.data));
+	}
+
 
     render(){
         return(
