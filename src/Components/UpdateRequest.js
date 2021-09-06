@@ -54,7 +54,7 @@ export default function UpdateRequest(props) {
     handleUpdate = () => {
 		
     }
-    
+
     state ={
         redirect: false
     }
@@ -72,6 +72,23 @@ export default function UpdateRequest(props) {
         }
     }
 
+    componentDidMount = () => {
+		axios.get('http://localhost:90/api/RequestFood/' + this.state.id, this.state.config)
+		.then((res) => {
+			console.log(res);
+			this.setState({
+				requestName: res.data.requestName,
+				phone: res.data.phone,
+				foodtype: res.data.foodtype,
+				country: res.data.country,
+				district: res.data.district,
+				street: res.data.street,
+                date: res.data.date
+				
+			})
+		}).catch(err => console.log(err.response.data));
+	}
+    
     render(){
         return(
             <div>
