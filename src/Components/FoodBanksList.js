@@ -17,6 +17,16 @@ export default class BloodBanks extends Component {
         };
       }
 
+      componentDidMount() {
+        Axios.get("http://localhost:90/api/FoodBank", this.state.config)
+          .then((res) => {
+            console.log(res.data);
+            this.setState({
+              foodbanks: res.data,
+            });
+          })
+          .catch((err) => console.log(err.response));
+      }
       
 
 render() {
