@@ -39,6 +39,17 @@ export default function UpdateRequest(props) {
         })
     }
 
+    handleSubmit = (event) => {
+        if(window.confirm('Are you sure to update your request details?'))
+        event.preventDefault();
+		axios.put('http://localhost:90/api/RequestFood/' + this.props.id, this.state, this.state.config)
+		.then((res) => {
+            console.log(res)
+            this.props.history.push('userdashboard/viewrequest')
+		}).catch(err => console.log(err.response));
+            
+    }
+    
     render(){
         return(
             <div>
