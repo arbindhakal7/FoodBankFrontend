@@ -90,18 +90,19 @@ export default class ViewRequests extends Component {
                     <td>{request.requestName}</td>
                     <td>{request.foodtype}</td>
                     <td>{request.phone}</td>
-                    <td>{request.country},
-             {request.district},
-             {request.street}
-            </td>
                     <td>
-                      <Link to class="btn btn-outline-primary mr-2"
+                      {request.country},{request.district},{request.street}
+                    </td>
+                    <td>
+                      <Link
+                        to
+                        class="btn btn-outline-primary mr-2"
                         onClick={() => this.handleUpdateClick(request._id)}
-                        
                       >
                         Edit
                       </Link>
-                      <Link to
+                      <Link
+                        to
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(request._id)}
                       >
