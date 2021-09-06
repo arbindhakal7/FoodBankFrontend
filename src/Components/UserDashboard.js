@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import jwt_decode from "jwt-decode";
 import foodbanks from "../css/images/FoodBanks.jpg";
 import { Link } from "react-router-dom";
+import FoodBankList from "./FoodBanksList";
 import users from "../css/images/users.png";
 
 export default class UserDashboard extends Component {
@@ -84,7 +85,7 @@ export default class UserDashboard extends Component {
                 <a href="/!#" class="image feature"></a>
                 <img src={foodbanks} alt="foodbank" />
                 <h3>Food Bank</h3>
-                {/* <FoodBankList/> */}
+                <FoodBankList />
               </section>
             </div>
           </section>
