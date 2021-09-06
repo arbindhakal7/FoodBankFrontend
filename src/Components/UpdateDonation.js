@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useParams, Redirect } from 'react-router-dom'
 import NavBar from './NavBar'
 
-export default function UpdatedDonation(props) {
+export default function UpdateDonation(props) {
 	let {id} = useParams();
 	return (
         
