@@ -7,7 +7,8 @@ import Login from "./Login";
 import Register from "./Register";
 import UserDashboard from "./UserDashboard";
 import AddDonation from "./AddDonation";
-import UpdateDonation from "./UpdateDonation";
+import UpdateRequest from "./UpdateRequest";
+import UpdateDonation from "./UpdateDonation"
 import AddRequest from "./AddRequest";
 import ViewRequests from "./ViewRequest";
 import ViewDonations from "./ViewDonations";
@@ -32,6 +33,8 @@ class Start extends Component {
                     <PrivateRoute path='/userdashboard/viewrequest' component={ViewRequests} />
                     <PrivateRoute path='/userdashboard/profile/:id' component={Profile} />
                     <PrivateRoute path='/userdashboard/viewprofiledetails' component={ViewProfileDetails} />
+                    <PrivateRoute path='/userdashboard/updaterequest/:id' component={UpdateRequest} />
+
                     
             <Route>
             <NoMatch />

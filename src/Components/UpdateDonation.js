@@ -82,7 +82,7 @@ export default function UpdateDonation(props) {
                 date: res.data.date
 				
 			})
-		}).catch(err => console.log(err.response.data));
+		}).catch(err => console.log(err.response));
 	}
 
 
@@ -102,7 +102,7 @@ export default function UpdateDonation(props) {
                                 onChange={this.handleChange}
                             />
                         </FormGroup>
-                        
+
                 <FormGroup>
                     <Label for="phone">Phone Number</Label>
                     <Input type='number' name='phone' id='phone'
