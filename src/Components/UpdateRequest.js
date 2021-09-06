@@ -50,10 +50,11 @@ export default function UpdateRequest(props) {
             
     }
 
-    
+
     handleUpdate = () => {
 		
     }
+    
     state ={
         redirect: false
     }
@@ -61,6 +62,14 @@ export default function UpdateRequest(props) {
         this.setState({
             redirect:true
         })
+    }
+
+
+    handleCancel = ()=> {
+        if (this.state.redirect){
+            return<Redirect to ='/userdashboard/viewrequest'/>
+       
+        }
     }
 
     render(){
