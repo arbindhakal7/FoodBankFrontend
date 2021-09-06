@@ -38,7 +38,6 @@ export default function UpdateRequest(props) {
             [event.target.name]: event.target.value
         })
     }
-
     handleSubmit = (event) => {
         if(window.confirm('Are you sure to update your request details?'))
         event.preventDefault();
@@ -51,10 +50,9 @@ export default function UpdateRequest(props) {
     }
 
 
-    handleUpdate = () => {
+	handleUpdate = () => {
 		
     }
-
     state ={
         redirect: false
     }
@@ -63,16 +61,14 @@ export default function UpdateRequest(props) {
             redirect:true
         })
     }
-
-
     handleCancel = ()=> {
         if (this.state.redirect){
             return<Redirect to ='/userdashboard/viewrequest'/>
        
         }
     }
-
-    componentDidMount = () => {
+	
+	componentDidMount = () => {
 		axios.get('http://localhost:90/api/RequestFood/' + this.state.id, this.state.config)
 		.then((res) => {
 			console.log(res);
@@ -88,7 +84,7 @@ export default function UpdateRequest(props) {
 			})
 		}).catch(err => console.log(err.response.data));
 	}
-    
+
     render(){
         return(
             <div>
@@ -98,26 +94,30 @@ export default function UpdateRequest(props) {
                 <FormGroup>
                     <Label for="requestName">Full Name</Label>
                     <Input type='text' name='requestName' id='requestName'
-                    
+                     value ={this.state.requestName}
+                     onChange={this.handleChange}
                      />
                 </FormGroup>
                 <FormGroup>
                     <Label for='phone'>Phone Number </Label>
                     <Input type='number' name='phone' id='phone'
-                   
+                     value ={this.state.phone}
+                     onChange={this.handleChange}
                         
                     />
                      <FormGroup>
                     <Label for='country'>Country</Label>
                     <Input type='text' name='country' id='country'
-                    
+                     value ={this.state.country}
+                     onChange={this.handleChange}
                     />
                 </FormGroup>
                 
                 <FormGroup>
                     <Label for='district'>District</Label>
                     <Input type='text' name='district' id='district'
-                  
+                     value ={this.state.district}
+                     onChange={this.handleChange}
                     />
                 </FormGroup>
               
@@ -125,7 +125,8 @@ export default function UpdateRequest(props) {
                     <FormGroup>
                     <Label for='street'>Street</Label>
                     <Input type='text' name='street' id='street'
-                   
+                     value ={this.state.street}
+                     onChange={this.handleChange}
                     />
                 
                 </FormGroup>
@@ -134,7 +135,8 @@ export default function UpdateRequest(props) {
             <FormGroup>
             <Label for='foodtype'>Food Type</Label>
             <Input type='select' name='foodtype' id='foodtype' 
-             >
+            value ={this.state.foodtype}
+            onChange={this.handleChange} >
             <option value='' >Select Food Type </option>
             <option value='fresh'>Fresh</option>
             <option value='stored'>Stored</option>
@@ -150,15 +152,16 @@ export default function UpdateRequest(props) {
                     <FormGroup>
                     <Label for='date'>Date</Label>
                     <Input type='datetime-local' name='date' id='date'
-                   
+                     value ={this.state.date}
+                     onChange={this.handleChange}
                          />
                     </FormGroup>
 
                 
                 
-                <Button block color="primary" >Submit</Button>
-   
-                <Button block color='danger' >Cancel</Button>
+                <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>
+                {this.handleCancel()}
+                <Button block color='danger' onClick={this.setRedirect}>Cancel</Button>
             </Form>
         </div>
         </div>
