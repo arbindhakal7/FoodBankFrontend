@@ -15,7 +15,23 @@ export default function UpdateRequest(props) {
 }
 
  class UpdateForm extends Component{
+    constructor(props) {
+        super(props)
 
+        this.state = {
+			id: this.props.id,
+            requestName: '',
+            phone: '',
+            foodtype:'',
+            country: '',
+            district: '',
+            street: '',
+            date:'',
+            config: {
+                headers: { 'Authorization': localStorage.getItem('token') }
+            }
+        }
+    }
 
     render(){
         return(
