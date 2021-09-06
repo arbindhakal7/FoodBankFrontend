@@ -28,6 +28,7 @@ export default function UpdateDonation(props) {
             street: '',
             foodtype:'',
             phone: '',
+            date: '',
             config: {
                 headers: { 'Authorization': localStorage.getItem('token') },
                 isUpdate: false
@@ -78,6 +79,7 @@ export default function UpdateDonation(props) {
 				phone: res.data.phone,
 				district: res.data.district,
 				street: res.data.street,
+                date: res.data.date
 				
 			})
 		}).catch(err => console.log(err.response.data));
@@ -92,6 +94,15 @@ export default function UpdateDonation(props) {
             
             <div className='container'>
             <Form>
+
+            <FormGroup>
+                            <Label for='name'>Name</Label>
+                            <Input type='text' name='donorName' id='donorName'
+                                value={this.state.donorName}
+                                onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        
                 <FormGroup>
                     <Label for="phone">Phone Number</Label>
                     <Input type='number' name='phone' id='phone'
@@ -136,7 +147,13 @@ export default function UpdateDonation(props) {
                 
                 </FormGroup>
                
-
+                <FormGroup>
+                    <Label for='date'>Date</Label>
+                    <Input type='datetime-local' name='date' id='date'
+                     value ={this.state.date}
+                     onChange={this.handleChange}
+                         />
+                    </FormGroup>
                 
                 <Button block color="primary" onClick={this.handleSubmit}>Submit</Button>
                 {this.handleCancel()}
