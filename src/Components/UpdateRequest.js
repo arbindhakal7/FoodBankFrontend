@@ -49,7 +49,20 @@ export default function UpdateRequest(props) {
 		}).catch(err => console.log(err.response));
             
     }
+
     
+    handleUpdate = () => {
+		
+    }
+    state ={
+        redirect: false
+    }
+    setRedirect = () => {
+        this.setState({
+            redirect:true
+        })
+    }
+
     render(){
         return(
             <div>
