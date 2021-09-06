@@ -14,6 +14,7 @@ import ViewRequests from "./ViewRequest";
 import ViewDonations from "./ViewDonations";
 import Profile from "./Profile";
 import ViewProfileDetails from "./ViewProfileDetails";
+import FoodBank from "./FoodBanks";
 
 class Start extends Component {
   render() {
@@ -56,6 +57,10 @@ class Start extends Component {
             <PrivateRoute
               path="/userdashboard/updaterequest/:id"
               component={UpdateRequest}
+            />
+            <PrivateRoute
+              path="/userdashboard/Foodbank"
+              component={FoodBank}
             />
 
             <Route>
