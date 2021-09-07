@@ -11,7 +11,7 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      isBasic: false,
+      isUser: false,
       isAdmin: false,
     };
     this.onChangeLogin = this.onChangeLogin.bind(this);
@@ -28,34 +28,37 @@ export default class Login extends Component {
     //prevents from dataloss
     e.preventDefault();
     //send data to our API
-    const data = {
+    const user = {
       email: this.state.email,
       password: this.state.password,
     };
-    login(data).then((res) => {
-      if (res) {
+    login(user).then((res) => {
+      if (this.state.isUser) {
         this.props.history.push(`/userdash/:id`);
-      }
+      } else if (this.state.isAdmin)
+      this.props.history.push(`/admindash/:id`);
+
     });
     e.preventDefault();
     axios
-      .post("http://localhost:90/api/user/login", data)
+      .post("http://localhost:90/api/user/login", this.state)
       .then((res) => {
         console.log(res);
-        localStorage.setItem("token", res.data.token);
-        let user = jwtDecode(res.data.token.split(" ")[1]);
-        if (user.role === "admin") this.setState({ isAdmin: true });
-        else this.setState({ isBasic: true });
+        localStorage.setItem('token', res.data.token);
+        let user = jwtDecode(res.data.token.split(' ')[1]);
+        if (user.role === 'admin') this.setState({ isAdmin: true });
+        else this.setState({ isUser: true });
         return res.data;
       })
       .catch((err) => console.log(err));
   };
   render() {
-    if (this.state.isAdmin) {
-      return <Redirect to="/admindash/:id" />;
-    } else if (this.state.isBasic) {
-      return <Redirect to="/userdash/:id" />;
-    }
+    // if (this.state.isAdmin) {
+    //   return <Redirect to="/admindash/:id" />;
+    // } else if (this.state.isUser) {
+    //   return <Redirect to="/userdash/:id" />;
+    // }
+
     return (
       <div className="Nav">
         <HomeNavBar />

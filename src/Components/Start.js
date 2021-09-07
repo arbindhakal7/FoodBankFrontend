@@ -15,6 +15,8 @@ import ViewDonations from "./ViewDonations";
 import Profile from "./Profile";
 import ViewProfileDetails from "./ViewProfileDetails";
 import FoodBank from "./FoodBanks";
+import AdminDashboard from "../Admin/AdminDash";
+import AdminRoute from "../Admin/AdminRoute";
 
 class Start extends Component {
   render() {
@@ -61,6 +63,11 @@ class Start extends Component {
             <PrivateRoute
               path="/userdashboard/Foodbank"
               component={FoodBank}
+            />
+
+            <AdminRoute
+              path="/admindash/"
+              component={AdminDashboard}
             />
 
             <Route>
