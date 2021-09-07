@@ -50,8 +50,6 @@ export class UpdateForm extends Component {
       )
       .then((res) => {
         console.log(res);
-  
-
       })
       .catch((err) => console.log(err.response));
   };
