@@ -19,6 +19,7 @@ export class UpdateForm extends Component {
 
     this.state = {
       id: this.props.id,
+      donorName: "",
       country: "",
       district: "",
       street: "",
@@ -49,8 +50,10 @@ export class UpdateForm extends Component {
       )
       .then((res) => {
         console.log(res);
+  
+
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => console.log(err.response));
   };
 
   state = {
@@ -76,6 +79,7 @@ export class UpdateForm extends Component {
       .then((res) => {
         console.log(res);
         this.setState({
+          donorName: res.data.donorName,
           foodtype: res.data.foodtype,
           country: res.data.country,
           phone: res.data.phone,
