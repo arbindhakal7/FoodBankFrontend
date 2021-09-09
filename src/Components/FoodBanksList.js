@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
-export default class BloodBanks extends Component {
+export default class FoodBanks extends Component {
   constructor(props) {
     super(props);
 
@@ -49,8 +49,7 @@ export default class BloodBanks extends Component {
                     <Link class="mr-2" to="/userdashboard/AddDonation">
                       Donate
                     </Link>
-                  </td>
-                  <td>
+                      <br/>
                     <Link class="mr-2" to="/userdashboard/AddRequest">
                       Request
                     </Link>

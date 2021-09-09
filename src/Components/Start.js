@@ -17,6 +17,14 @@ import ViewProfileDetails from "./ViewProfileDetails";
 import FoodBank from "./FoodBanks";
 import AdminDashboard from "../Admin/AdminDash";
 import AdminRoute from "../Admin/AdminRoute";
+import AdminAddFoodBank from "../Admin/AdminAddFoodBank";
+import AdminFoodBank from "../Admin/AdminFoodBank";
+import AdminViewUsers from '../Admin/AdminViewUsers';
+import AdminViewUserDetails from '../Admin/AdminViewUserDetails';
+
+
+
+
 
 class Start extends Component {
   render() {
@@ -60,15 +68,19 @@ class Start extends Component {
               path="/userdashboard/updaterequest/:id"
               component={UpdateRequest}
             />
-            <PrivateRoute
-              path="/userdashboard/Foodbank"
-              component={FoodBank}
-            />
+            <PrivateRoute path="/userdashboard/Foodbank" component={FoodBank} />
 
+
+
+            <AdminRoute path="/admindash/" component={AdminDashboard} />
             <AdminRoute
-              path="/admindash/"
-              component={AdminDashboard}
+              path="/admindashboard/adminaddfoodbank"
+              component={AdminAddFoodBank}
             />
+            <AdminRoute path='/admindashboard/adminfoodbanks' component={AdminFoodBank} />
+            <AdminRoute path='/admindashboard/adminviewusers' component={AdminViewUsers} />
+            <AdminRoute path='/admindashboard/viewuserdetails/:id' component={AdminViewUserDetails}/>
+
 
             <Route>
               <NoMatch />

@@ -76,16 +76,17 @@ export default class UserDashboard extends Component {
                   class="btn btn-primary mr-2"
                   to="/userdashboard/profile/:id"
                 >
-                  {" "}
-                  Edit{" "}
+                  Edit
                 </Link>
               </section>
-              <br />
+
               <section class="4u">
                 <a href="/!#" class="image feature"></a>
                 <img src={foodbanks} alt="foodbank" />
                 <h3>Food Bank</h3>
                 <FoodBankList />
+
+                
               </section>
             </div>
           </section>
