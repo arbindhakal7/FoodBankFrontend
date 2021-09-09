@@ -24,7 +24,7 @@ export default class AdminAddFoodBank extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    if (window.confirm("Are you sure to add this blood bank on the list?"))
+    if (window.confirm("Are you sure to add this food bank on the list?"))
       axios
         .post("http://localhost:90/api/FoodBank", this.state, this.state.config)
         .then((res) => {
