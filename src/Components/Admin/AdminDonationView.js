@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import AdminNavBar from "./AdminNavBar";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class AdminViewDonations extends Component {
   constructor(props) {
@@ -22,7 +24,7 @@ export default class AdminViewDonations extends Component {
 
   handleDelete = (id) => {
     if (window.confirm("Are you sure to remove this donation from the list?"))
-      Axios.delete(
+      axios.delete(
         "http://localhost:90/api/DonateFood/" + id,
         this.state.config
       )
@@ -44,7 +46,7 @@ export default class AdminViewDonations extends Component {
   };
 
   componentDidMount() {
-    Axios.get("http://localhost:90/api/admin/donations", this.state.config)
+    axios.get("http://localhost:90/api/admin/donations", this.state.config)
       .then((res) => {
         console.log(res.data);
         this.setState({
