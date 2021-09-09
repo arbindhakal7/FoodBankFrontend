@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Axios from 'axios'
-
+import Axios from "axios";
 
 export default class AdminUserList extends Component {
   constructor(props) {
@@ -31,6 +30,38 @@ export default class AdminUserList extends Component {
   }
 
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <div className="container">
+          <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table border shadow">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col"> Role</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.users.map((user) => (
+                  <tr key={user._id}>
+                    <th scope="row"></th>
+                    <td>{user.fullname}</td>
+                    <td>{user.role}</td>
+                    <td>
+                      <Link class="mr-2" to="/admindashboard/adminviewusers">
+                        {" "}
+                        Edit
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
