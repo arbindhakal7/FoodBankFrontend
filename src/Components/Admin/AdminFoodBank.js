@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import AdminNavBar from "./AdminNavBar";
+import { Link } from "react-router-dom";
+import Axios from 'axios'
 
 export default class AdminFoodBank extends Component {
   constructor(props) {
@@ -51,6 +53,45 @@ export default class AdminFoodBank extends Component {
     return (
       <div>
         <AdminNavBar history={this.props.history} />
+        <div className="container">
+          <div className="py-4">
+            <h1>Food Bank List</h1>
+            <table class="table border shadow">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Food Bank Name</th>
+                  <th scope="col">Available Food Type</th>
+
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.foodbanks.map((foodBank) => (
+                  <tr key={foodBank._id}>
+                    <th scope="row"></th>
+                    <td>{foodBank.FoodBankName}</td>
+                    <td>{foodBank.availableFood}</td>
+                    <td>
+                      <Link
+                        class="btn btn-outline-primary mr-2"
+                        onClick={() => this.handleUpdateClick(foodBank._id)}
+                      >
+                        Edit
+                      </Link>
+                      <Link
+                        class="btn btn-danger"
+                        onClick={() => this.handleDelete(foodBank._id)}
+                      >
+                        Delete
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     );
   }
