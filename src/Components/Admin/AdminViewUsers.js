@@ -59,6 +59,56 @@ export default class AdminViewUsers extends Component {
     return (
       <div>
         <AdminNavBar history={this.props.history} />
+
+        <div className="container">
+          <div className="py-4">
+            <h1>Users List</h1>
+            <table class="table border shadow">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Full Name</th>
+                  <th scope="col">Phone</th>
+                  {/* <th scope="col"> Address</th> */}
+                  <th scope="col"> Role</th>
+
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.users.map((user) => (
+                  <tr key={user._id}>
+                    <th scope="row"></th>
+                    <td>{user.fullname}</td>
+                    <td>{user.phone}</td>
+                    {/* <td>{user.country}, {user.district}, {user.street}</td> */}
+                    <td>{user.role}</td>
+                    <td>
+                      <Link
+                        class="btn btn-primary mr-2"
+                        onClick={() => this.handleViewClick(user._id)}
+                      >
+                        View
+                      </Link>
+                      <Link
+                        onClick={() => this.handleUpdateClick(user._id)}
+                        class="btn btn-outline-primary mr-2"
+                      >
+                        Edit
+                      </Link>
+                      <Link
+                        class="btn btn-danger"
+                        onClick={() => this.handleDelete(user._id)}
+                      >
+                        Delete
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     );
   }
