@@ -1,4 +1,7 @@
 import React from 'react'
+import { Navbar, NavItem, NavbarText, Button, Nav,  } from 'reactstrap';
+import { NavLink, Switch, Link, Route } from 'react-router-dom'
+import Login from '../Login';
 
 export default function AdminNavBar(props) {
 

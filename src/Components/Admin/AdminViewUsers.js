@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import AdminNavBar from "./AdminNavBar";
+import { Link } from "react-router-dom";
+import Axios from 'axios'
 
 export default class AdminViewUsers extends Component {
   constructor(props) {
