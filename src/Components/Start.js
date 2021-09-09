@@ -21,6 +21,8 @@ import AdminAddFoodBank from "./Admin/AdminAddFoodBank";
 import AdminFoodBank from "./Admin/AdminFoodBank";
 import AdminViewUsers from "./Admin/AdminViewUsers";
 import AdminUserDetails from "./Admin/AdminViewUserDetails";
+import AdminViewDonations from "./Admin/AdminDonationView";
+import AdminViewRequests from "./Admin/AdminRequestView";
 
 class Start extends Component {
   render() {
@@ -66,6 +68,8 @@ class Start extends Component {
             />
             <PrivateRoute path="/userdashboard/Foodbank" component={FoodBank} />
 
+
+
             <AdminRoute path="/admindash/" component={AdminDashboard} />
             <AdminRoute
               path="/admindashboard/adminaddfoodbank"
@@ -82,6 +86,18 @@ class Start extends Component {
             <AdminRoute
               path="/admindashboard/viewuserdetails/:id"
               component={AdminUserDetails}
+            />
+            <AdminRoute
+              path="/admindashboard/viewuserdetails/:id"
+              component={AdminUserDetails}
+            />
+            <AdminRoute
+              path="/admindashboard/adminviewdonations"
+              component={AdminViewDonations}
+            />
+            <AdminRoute
+              path="/admindashboard/adminviewrequests"
+              component={AdminViewRequests}
             />
 
             <Route>
