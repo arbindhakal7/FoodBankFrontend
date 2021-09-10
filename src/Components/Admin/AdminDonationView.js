@@ -91,12 +91,6 @@ export default class AdminViewDonations extends Component {
                     <td>{donation.date}</td>
                     <td>
                       <Link
-                        class="btn btn-outline-primary mr-2"
-                        onClick={() => this.handleUpdateClick(donation._id)}
-                      >
-                        Edit
-                      </Link>
-                      <Link
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(donation._id)}
                       >

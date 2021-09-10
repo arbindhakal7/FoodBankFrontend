@@ -53,7 +53,7 @@ export default class AdminUserList extends Component {
                     <td>
                       <Link class="mr-2" to="/admindashboard/adminviewusers">
                         {" "}
-                        Edit
+                        Manage
                       </Link>
                     </td>
                   </tr>

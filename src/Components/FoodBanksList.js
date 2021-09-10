@@ -46,13 +46,10 @@ export default class FoodBanks extends Component {
                   <th scope="row"></th>
                   <td>{foodbank.FoodBankName}</td>
                   <td>
-                    <Link class="mr-2" to="/userdashboard/AddDonation">
-                      Donate
+                    <Link class="mr-2" to="/admindashboard/adminfoodbanks">
+                      Manage
                     </Link>
                       <br/>
-                    <Link class="mr-2" to="/userdashboard/AddRequest">
-                      Request
-                    </Link>
                   </td>
                 </tr>
               ))}

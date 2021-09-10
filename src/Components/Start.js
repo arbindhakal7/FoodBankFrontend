@@ -23,7 +23,7 @@ import AdminViewUsers from "./Admin/AdminViewUsers";
 import AdminUserDetails from "./Admin/AdminViewUserDetails";
 import AdminViewDonations from "./Admin/AdminDonationView";
 import AdminViewRequests from "./Admin/AdminRequestView";
-import AdminUpdateRequest from "./Admin/AdminUpdateRequest";
+
 
 class Start extends Component {
   render() {
@@ -99,12 +99,6 @@ class Start extends Component {
               component={AdminViewRequests}
             />
 
-            <AdminRoute
-              path="/admindashboard/adminupdaterequest/:id"
-              component={AdminUpdateRequest}
-            />
-
-          
 
             <Route>
               <NoMatch />

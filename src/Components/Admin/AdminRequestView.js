@@ -87,13 +87,6 @@ export default class AdminViewRequests extends Component {
                     <td>{request.date}</td>
                     <td>
                       <Link
-                        class="btn btn-primary mr-2"
-                        onClick={() => this.handleUpdate(request._id)}
-                      >
-                        Edit
-                      </Link>
-
-                      <Link
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(request._id)}
                       >
