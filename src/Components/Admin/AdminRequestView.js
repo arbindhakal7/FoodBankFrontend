@@ -40,9 +40,9 @@ export default class AdminViewRequests extends Component {
         .catch((err) => console.log(err.response));
   };
 
-  handleViewClick = (id) => {
+  handleUpdate = (id) => {
     console.log(id);
-    this.props.history.push(`/admindashboard/adminviewrequestdetails/${id}`);
+    this.props.history.push(`/admindashboard/updaterequeststatus/${id}`);
   };
 
   componentDidMount() {
@@ -88,9 +88,9 @@ export default class AdminViewRequests extends Component {
                     <td>
                       <Link
                         class="btn btn-primary mr-2"
-                        onClick={() => this.handleViewClick(request._id)}
+                        onClick={() => this.handleUpdate(request._id)}
                       >
-                        View
+                        Update
                       </Link>
 
                       <Link
