@@ -90,7 +90,7 @@ export default class AdminViewRequests extends Component {
                         class="btn btn-primary mr-2"
                         onClick={() => this.handleUpdate(request._id)}
                       >
-                        Update
+                        Edit
                       </Link>
 
                       <Link
