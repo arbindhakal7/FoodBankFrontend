@@ -16,6 +16,7 @@ export default class AdminViewDonations extends Component {
       country: "",
       district: "",
       street: "",
+      date: "",
       config: {
         headers: { Authorization: localStorage.getItem("token") },
       },
@@ -71,6 +72,7 @@ export default class AdminViewDonations extends Component {
                   <th scope="col">Full Address</th>
                   <th scope="col"> Phone</th>
                   <th scope="col"> Food Type</th>
+                  <th scope ="col">Date</th>
 
                   <th>Action</th>
                 </tr>
@@ -86,6 +88,7 @@ export default class AdminViewDonations extends Component {
                     </td>
                     <td>{donation.phone}</td>
                     <td>{donation.foodtype}</td>
+                    <td>{donation.date}</td>
                     <td>
                       <Link
                         class="btn btn-outline-primary mr-2"
