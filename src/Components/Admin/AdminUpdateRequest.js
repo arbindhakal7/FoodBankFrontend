@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import AdminNavBar from "./AdminNavBar";
+import { Redirect } from "react-router";
 import axios from "axios";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
-export default function UpdatedRequest(props) {
+export default function UpdateRequestStatus(props) {
   let { id } = useParams();
   return (
     <div>
-      <h1>{id}</h1>
       <UpdateForm id={id} />
     </div>
   );
@@ -54,6 +54,20 @@ class UpdateForm extends Component {
   };
 
   handleUpdate = () => {};
+  state = {
+    redirect: false,
+  };
+  setRedirect = () => {
+    this.setState({
+      redirect: true,
+    });
+  };
+  handleCancel = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/admindashboard/adminviewrequests" />;
+    }
+  };
+
 
   componentDidMount = () => {
     axios
@@ -167,13 +181,8 @@ class UpdateForm extends Component {
             <Button block color="primary" onClick={this.handleSubmit}>
               Submit
             </Button>
-            <Button
-              block
-              color="danger"
-              onClick={() => this.props.history.push("/")}
-            >
-              Cancel
-            </Button>
+            {this.handleCancel()}
+            <Button block color='danger' onClick={this.setRedirect}>Cancel</Button>
           </Form>
         </div>
       </div>
