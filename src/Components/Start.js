@@ -23,7 +23,8 @@ import AdminViewUsers from "./Admin/AdminViewUsers";
 import AdminUserDetails from "./Admin/AdminViewUserDetails";
 import AdminViewDonations from "./Admin/AdminDonationView";
 import AdminViewRequests from "./Admin/AdminRequestView";
-import AdminUpdateRequest from "./Admin/AdminUpdateRequest"
+import AdminUpdateRequest from "./Admin/AdminUpdateRequest";
+import AdminViewRequestInfo from "./Admin/AdminViewRequestInfo"
 
 class Start extends Component {
   render() {
@@ -102,6 +103,11 @@ class Start extends Component {
             <AdminRoute
               path="/admindashboard/adminupdaterequest/:id"
               component={AdminUpdateRequest}
+            />
+
+            <AdminRoute
+              path="/admindashboard/adminviewrequestdetails/:id"
+              component={AdminViewRequestInfo}
             />
 
             <Route>
