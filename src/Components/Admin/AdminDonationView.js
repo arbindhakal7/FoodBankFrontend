@@ -17,6 +17,7 @@ export default class AdminViewDonations extends Component {
       district: "",
       street: "",
       date: "",
+      status:"",
       config: {
         headers: { Authorization: localStorage.getItem("token") },
       },
@@ -64,15 +65,16 @@ export default class AdminViewDonations extends Component {
         <div className="container">
           <div className="py-4">
             <h1>Donation List</h1>
-            <table class="table border shadow">
-              <thead class="thead-dark">
+            <table className="table border shadow">
+              <thead className="thead-dark">
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Full Name</th>
-                  <th scope="col">Full Address</th>
-                  <th scope="col"> Phone</th>
-                  <th scope="col"> Food Type</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Food Type</th>
                   <th scope ="col">Date</th>
+                  <th scope ="col"> Status </th>
 
                   <th>Action</th>
                 </tr>
@@ -83,13 +85,22 @@ export default class AdminViewDonations extends Component {
                     <th scope="row"></th>
                     <td>{donation.donorName}</td>
                     <td>
-                      {donation.country},{donation.district},
-                      {donation.street}
+                      {donation.street},<br/>
+                      {donation.district}, 
+                      {donation.country}
                     </td>
                     <td>{donation.phone}</td>
                     <td>{donation.foodtype}</td>
                     <td>{donation.date}</td>
+                    <td>{donation.status}</td>
                     <td>
+                      <Link
+                        class="btn btn-primary"
+                        onClick={() => this.handleUpdateClick(donation._id)}
+                      >
+                        Edit
+                      </Link>
+
                       <Link
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(donation._id)}

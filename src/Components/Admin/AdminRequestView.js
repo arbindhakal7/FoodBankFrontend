@@ -68,6 +68,7 @@ export default class AdminViewRequests extends Component {
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Full Name</th>
+                  <th scope="col">Phone Number</th>
                   <th scope="col"> Food Type</th>
                   <th scope="col"> Address</th>
                   <th scope="col">Date</th>
@@ -80,12 +81,20 @@ export default class AdminViewRequests extends Component {
                   <tr key={request._id}>
                     <th scope="row"></th>
                     <td>{request.requestName}</td>
+                    <td>{request.phone}</td>
                     <td>{request.foodtype}</td>
                     <td>
                       {request.country}, {request.district}, {request.street}
                     </td>
                     <td>{request.date}</td>
                     <td>
+                    <Link
+                        class="btn btn-primary"
+                        onClick={() => this.handleUpdate(request._id)}
+                      >
+                        Edit
+                      </Link>
+
                       <Link
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(request._id)}

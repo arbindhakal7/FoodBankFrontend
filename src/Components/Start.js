@@ -23,7 +23,12 @@ import AdminViewUsers from "./Admin/AdminViewUsers";
 import AdminUserDetails from "./Admin/AdminViewUserDetails";
 import AdminViewDonations from "./Admin/AdminDonationView";
 import AdminViewRequests from "./Admin/AdminRequestView";
-
+import UpdateFoodBank from "./Admin/AdminUpdateFoodBank";
+import UpdateDonationStatus from "./Admin/AdminUpdateDonation";
+import UpdateRequestStatus from "./Admin/AdminUpdateRequest";
+import ViewProfile from "./Admin/AdminViewProfile";
+import UpdateProfile from "./Admin/AdminUpdateProfile";
+import UpdateUserRole from "./Admin/AdminUpdateUser";
 
 class Start extends Component {
   render() {
@@ -99,6 +104,35 @@ class Start extends Component {
               component={AdminViewRequests}
             />
 
+            <AdminRoute
+              path="/admindashboard/updatefoodbank/:id"
+              component={UpdateFoodBank}
+            />
+
+            <AdminRoute
+              path="/admindashboard/updatedonationstatus/:id"
+              component={UpdateDonationStatus}
+            />
+
+            <AdminRoute
+              path="/admindashboard/updaterequeststatus/:id"
+              component={UpdateRequestStatus}
+            />
+
+            <AdminRoute
+              path="/admindashboard/viewprofile"
+              component={ViewProfile}
+            />
+
+            <AdminRoute
+              path="/admindashboard/updateprofile"
+              component={UpdateProfile}
+            />
+
+            <AdminRoute
+              path="/admindashboard/updateuserrole/:id"
+              component={UpdateUserRole}
+            />
 
             <Route>
               <NoMatch />
