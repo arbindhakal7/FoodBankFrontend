@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
 import NavBar from "./NavBar";
-import jwt_decode from "jwt-decode";
 
 export default class AddRequest extends Component {
   constructor(props) {

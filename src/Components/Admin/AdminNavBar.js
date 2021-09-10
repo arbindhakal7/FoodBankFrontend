@@ -37,7 +37,7 @@ return(
                             <NavLink to='/admindashboard/adminviewrequests'>Requests List</NavLink>
                         </NavItem>
                         <NavItem id="navitem">
-                            <NavLink to='/admindashboard/adminfoodbanks'>Food Bank</NavLink>
+                            <NavLink to='/admindash/nav'>Food Bank</NavLink>
                             <ul>
                                 <Link to='/admindashboard/adminaddfoodbank' id="navlist">Add Food Bank</Link>
                                 <Link to='/admindashboard/adminfoodbanks' id="navlist">View Food Banks</Link>

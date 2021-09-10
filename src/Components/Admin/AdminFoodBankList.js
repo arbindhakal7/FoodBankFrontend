@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import AdminNavBar from "./AdminNavBar";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
-export default class FoodBanks extends Component {
+export default class AdminFoodBankList extends Component {
   constructor(props) {
     super(props);
 
@@ -31,27 +32,27 @@ export default class FoodBanks extends Component {
   render() {
     return (
       <div className="container">
-        <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
+        <div className="py-4">
+          <h1>Food Bank List</h1>
           <table class="table border shadow">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Food Bank Name</th>
-                <th scope="col">Action</th>
+                <th scope="col">Available Food Type</th>
+
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {this.state.foodbanks.map((foodbank) => (
-                <tr key={foodbank._id}>
+              {this.state.foodbanks.map((foodBank) => (
+                <tr key={foodBank._id}>
                   <th scope="row"></th>
-                  <td>{foodbank.FoodBankName}</td>
+                  <td>{foodBank.FoodBankName}</td>
+                  <td>{foodBank.availableFood}</td>
                   <td>
-                    <Link class="mr-2" to="/userdashboard/AddDonation">
-                      Donate
-                    </Link>
-                    <br />
-                    <Link class="mr-2" to="/userdashboard/AddRequest">
-                      Request
+                    <Link class="mr-2" to="/admindashboard/adminfoodbanks">
+                      Manage
                     </Link>
                   </td>
                 </tr>

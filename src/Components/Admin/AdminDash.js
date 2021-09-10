@@ -4,7 +4,7 @@ import jwt_decode from 'jwt-decode'
 import AdminUserList from './AdminUserList'
 import users from "../images/users.png"
 import foodbanks from '../images/FoodBanks.jpg'
-import FoodBanks from '../FoodBanksList'
+import AdminFoodBankList from './AdminFoodBankList'
 
 export default class AdminDashboard extends Component{
 
@@ -60,7 +60,7 @@ export default class AdminDashboard extends Component{
                             <a href="/!#" class="image feature"></a>
                             <img src={foodbanks} alt="foodbanks" />
                             <h3>Food Bank</h3>
-                            <FoodBanks/>
+                            <AdminFoodBankList/>
                     
                         </section>
                         {/* <section class="4u"> */}

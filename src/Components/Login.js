@@ -1,8 +1,8 @@
 import { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
-import jwtDecode from "jwt-decode";
+import jwt_Decode from "jwt-decode";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 import HomeNavBar from "./HomeNav";
 
 export default class Login extends Component {
@@ -45,7 +45,7 @@ export default class Login extends Component {
       .then((res) => {
         console.log(res);
         localStorage.setItem('token', res.data.token);
-        let user = jwtDecode(res.data.token.split(' ')[1]);
+        let user = jwt_Decode(res.data.token.split(' ')[1]);
         if (user.role === 'admin') this.setState({ isAdmin: true });
         else this.setState({ isUser: true });
         return res.data;
@@ -53,30 +53,30 @@ export default class Login extends Component {
       .catch((err) => console.log(err));
   };
   render() {
-    // if (this.state.isAdmin) {
-    //   return <Redirect to="/admindash/:id" />;
-    // } else if (this.state.isUser) {
-    //   return <Redirect to="/userdash/:id" />;
-    // }
+    if (this.state.isAdmin) {
+      return <Redirect to="/admindash/:id" />;
+    } else if (this.state.isUser) {
+      return <Redirect to="/userdash/:id" />;
+    }
 
     return (
       <div className="Nav">
         <HomeNavBar />
 
-        <div class="container">
-          <div class="signin-content">
-            <div class="signin-image">
+        <div className="container">
+          <div className="signin-content">
+            <div className="signin-image">
               <figure>
                 <img src="images/signin-image.jpg" alt="sing up image" />
               </figure>
             </div>
 
-            <div class="signin-form">
-              <h2 class="form-title">Log In</h2>
+            <div className="signin-form">
+              <h2 className="form-title">Log In</h2>
               <form method="POST" class="register-form" id="login-form">
-                <div class="form-group">
-                  <label for="your_name">
-                    <i class="zmdi zmdi-account material-icons-name"></i>
+                <div className="form-group">
+                  <label htmlFor="your_name">
+                    <i className="zmdi zmdi-account material-icons-name"></i>
                   </label>
                   <input
                     type="email"
@@ -86,9 +86,9 @@ export default class Login extends Component {
                     onChange={this.onChangeLogin}
                   />
                 </div>
-                <div class="form-group">
-                  <label for="your_pass">
-                    <i class="zmdi zmdi-lock"></i>
+                <div className="form-group">
+                  <label htmlFor="your_pass">
+                    <i className="zmdi zmdi-lock"></i>
                   </label>
                   <input
                     type="password"
@@ -99,7 +99,7 @@ export default class Login extends Component {
                   />
                 </div>
 
-                <div class="form-group form-button">
+                <div className="form-group form-button">
                   <input
                     type="submit"
                     name="signin"
