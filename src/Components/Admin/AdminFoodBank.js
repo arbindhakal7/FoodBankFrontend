@@ -11,7 +11,8 @@ export default class AdminFoodBank extends Component {
       foodbanks: [],
       foodbankId: "",
       FoodBankName: "",
-      availableFood: "",
+      address: "",
+      phone: "",
       config: {
         headers: { Authorization: localStorage.getItem("token") },
       },
@@ -61,7 +62,8 @@ export default class AdminFoodBank extends Component {
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Food Bank Name</th>
-                  <th scope="col">Available Food Type</th>
+                  <th scope="col">Phone Number</th>
+                  <th scope="col">Address</th>
 
                   <th>Action</th>
                 </tr>
@@ -71,7 +73,8 @@ export default class AdminFoodBank extends Component {
                   <tr key={foodBank._id}>
                     <th scope="row"></th>
                     <td>{foodBank.FoodBankName}</td>
-                    <td>{foodBank.availableFood}</td>
+                    <td>{foodBank.phone}</td>
+                    <td>{foodBank.address}</td>
                     <td>
                       <Link
                         class="btn btn-outline-primary mr-2"
