@@ -8,7 +8,8 @@ export default class AdminAddFoodBank extends Component {
     super(props);
     this.state = {
       FoodBankName: "",
-      availableFood: "",
+      address: "",
+      phone: "",
       config: {
         headers: { Authorization: localStorage.getItem("token") },
       },
@@ -50,13 +51,25 @@ export default class AdminAddFoodBank extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
+
             <FormGroup>
-              <Label for="availableFood">Available Food Type</Label>
+              <Label for="phone">Phone Number</Label>
+              <Input
+                type="number"
+                name="phone"
+                id="phone"
+                value={this.state.phone}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <Label for="address">Address</Label>
               <Input
                 type="text"
-                name="availableFood"
-                id="availableFood"
-                value={this.state.availableFood}
+                name="address"
+                id="address"
+                value={this.state.address}
                 onChange={this.handleChange}
               />
             </FormGroup>
