@@ -13,9 +13,8 @@ function App() {
   return (
   <BrowserRouter>
 <div>
-<Start>
-  
-</Start>
+<Start/>
+
 </div>
 </BrowserRouter>
   );

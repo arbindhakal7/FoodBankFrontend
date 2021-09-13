@@ -6,7 +6,7 @@ export default class HomeNavBar extends Component {
       <div>
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
           <div class="container-fluid">
-            <a href="#" class="navbar-brand">
+            <a href="/" class="navbar-brand">
               Food Bank
             </a>
             <button

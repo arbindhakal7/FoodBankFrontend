@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import AdminNavBar from './AdminNavBar'
 
 export default function UpdateFoodBank(props) {
-	let {id} = useParams();
+	let { id } = useParams();
 	return (
 		<div>
 			<UpdateForm id={id}/>
@@ -22,7 +22,8 @@ export default function UpdateFoodBank(props) {
         this.state = {
 			id: this.props.id,
             FoodBankName: '',
-            availableFood: '',
+            address: '',
+            phone: '',
             config: {
                 headers: { 'Authorization': localStorage.getItem('token') }
             }
@@ -34,7 +35,17 @@ export default function UpdateFoodBank(props) {
             [event.target.name]: event.target.value
         })
     }
+    handleSubmit = (event) => {
+        if(window.confirm('Are you sure to update the current status?'))
+        event.preventDefault();
+		axios.put('http://localhost:90/api/FoodBank/' + this.props.id, this.state, this.state.config)
+		.then((res) => {
+			console.log(res)
+		}).catch(err => console.log(err.response.data));
+            
+    }
 
+    handleUpdate = () => {}
     state = {
         redirect: false,
       };
@@ -49,17 +60,6 @@ export default function UpdateFoodBank(props) {
         }
       };
 
-
-    handleSubmit = (event) => {
-        if(window.confirm('Are you sure to update the current status?'))
-        event.preventDefault();
-		axios.put('http://localhost:3000/api/FoodBank/' + this.props.id,  this.state.config)
-		.then((res) => {
-			console.log(res)
-		}).catch(err => console.log(err.response.data));
-            
-    }
-
 	
 	componentDidMount = () => {
 		axios.get('http://localhost:90/api/FoodBank/' + this.state.id, this.state.config)
@@ -67,7 +67,8 @@ export default function UpdateFoodBank(props) {
 			console.log(res);
 			this.setState({
 				FoodBankName: res.data.FoodBankName,
-				availableFood: res.data.availableFood
+				address: res.data.address,
+                phone:res.data.phone
 				
 				
 			})
@@ -88,10 +89,19 @@ export default function UpdateFoodBank(props) {
                     onChange={this.handleChange}
                          />
                 </FormGroup>
+
                 <FormGroup>
-                    <Label for='availableFood'>Available Food Type</Label>
-                    <Input type='text' name='availableFood' id='availableFood'
-                    value ={this.state.availableFood}
+                    <Label for="phone">Phone Number</Label>
+                    <Input type='number' name='phone' id='phone'
+                    value ={this.state.phone}
+                    onChange={this.handleChange}
+                         />
+                </FormGroup>
+                
+                <FormGroup>
+                    <Label for='address'>Address</Label>
+                    <Input type='text' name='address' id='address'
+                    value ={this.state.address}
                     onChange={this.handleChange}
                     />
                 </FormGroup>

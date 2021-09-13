@@ -79,12 +79,40 @@ export default class Profile extends React.Component {
         .catch((err) => console.log(err.response.data.message));
   };
 
+  //  changeFileHandler = (e) => {
+  //       this.setState({
+  //           filename: e.target.files[0]
+  //       })
+  //   }
+
+  // sendData = (e) => {
+  //   e.preventDefault();
+  //   const con = {
+  //       headers: {
+  //           'authorization': `Bearer ${localStorage.getItem("token")}`
+  //       }
+  //   }
+  //   const data = new FormData();    
+  //   alert("clicked")
+  //   data.append('myimage', this.state.filename)
+  //   axios.post("http://localhost:90/profile/uploadimage", data,con)
+  //       .then((result) => {
+  //           alert("chnaged")
+  //           console.log(result)
+  //       })
+ 
+  //       .catch()
+  //     }   
+
   render() {
     return (
       <div>
         <NavBar history={this.props.history} />
 
         <div className="container">
+        <li>
+   <input type="file" name="files" onChange={this.changeFileHandler} /></li> 
+   <button onClick={this.sendData}>Send</button>
           <Form>
             <FormGroup>
               <Label for="fullname">Full Name</Label>
