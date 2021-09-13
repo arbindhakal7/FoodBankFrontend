@@ -33,6 +33,7 @@ export default class FoodBanks extends Component {
     return (
       <div className="container">
         <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
+          
           <table class="table border shadow">
             <thead class="thead-dark">
               <tr>
@@ -63,8 +64,8 @@ export default class FoodBanks extends Component {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
-      </div>
     );
   }
 }

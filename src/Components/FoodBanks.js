@@ -10,7 +10,8 @@ export default class FoodBanks extends Component {
       foodbanks: [],
       foodbankId: "",
       FoodBankName: "",
-      availableFood: "",
+      address: "",
+      phone: "",
       config: {
         headers: { Authorization: localStorage.getItem("token") },
       },
@@ -32,30 +33,34 @@ export default class FoodBanks extends Component {
     return (
       <div>
         <NavBar history={this.props.history} />
-        <div className="container">
-          <div className="py-4">
-            <h1>Food Bank List</h1>
-            <table class="table border shadow">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Food Bank Name</th>
-                  <th scope="col">Available Food Type</th>
+<br/>
+     
+      <div className="container">
+        <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
+          
+          <table class="table border shadow">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Food Bank Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.foodbanks.map((foodbank) => (
+                <tr key={foodbank._id}>
+                  <th scope="row"></th>
+                  <td>{foodbank.FoodBankName}</td>
+                  <td>{foodbank.phone}</td>
+                  <td>{foodbank.address}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {this.state.foodbanks.map((foodbank) => (
-                  <tr key={foodbank._id}>
-                    <th scope="row"></th>
-                    <td>{foodbank.FoodBankName}</td>
-                    <td>{foodbank.availableFood}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+              ))}
+            </tbody>
+          </table>
           </div>
         </div>
-      </div>
+        </div>
     );
   }
 }
