@@ -3,8 +3,10 @@ import NavBarAdmin from './AdminNavBar'
 import jwt_decode from 'jwt-decode'
 import AdminUserList from './AdminUserList'
 import users from "../images/users.png"
+import contact from "../images/contact.png"
 import foodbanks from '../images/FoodBanks.jpg'
 import AdminFoodBankList from './AdminFoodBankList'
+import Message from './Messages'
 
 export default class AdminDashboard extends Component{
 
@@ -63,12 +65,12 @@ export default class AdminDashboard extends Component{
                             <AdminFoodBankList/>
                     
                         </section>
-                        {/* <section class="4u"> */}
-                            {/* <a href="/!#" class="image feature"></a> */}
-                            {/* <img src={foodtype} alt="foodtype" /> */}
-                            {/* <h3>Food Type</h3> */}
-                           {/* <AvailableFood/> */}
-                        {/* </section> */}
+                        <section class="4u">
+                            <a href="/!#" class="image feature"></a>
+                            <img src={contact} alt="contact" />
+                            <h3>Contact Messages</h3>
+                           <Message/>
+                        </section>
 
                     </div>
                 </section> 

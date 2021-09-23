@@ -43,6 +43,9 @@ return(
                                 <Link to='/admindashboard/adminfoodbanks' id="navlist">View Food Banks</Link>
                             </ul>
                         </NavItem>
+                        <NavItem id="navitem">
+                            <NavLink to='/admindashboard/messages'>Messages</NavLink>
+                        </NavItem >
                     </ul>
                 </Nav>
                 <NavbarText>

@@ -5,13 +5,17 @@ import contact from './images/contact.png'
 import axios from "axios";
 
 export default class Contact extends Component {
-  state = {
+	constructor(props) {
+	super(props);
+	
+	this.state = {
     id: "",
-    contactname: "",
+    fullname: "",
     email: "",
-    number: "",
+    phone: "",
     message: "",
   };
+}
   textContactHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -20,7 +24,7 @@ export default class Contact extends Component {
   
   sendMessage = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:90/contact", this.state) 
+    await axios.post("http://localhost:90/api/contact", this.state) 
       .then((res) => {
         this.props.history.push("/login");
 
@@ -44,7 +48,7 @@ export default class Contact extends Component {
 				</span>
 
 				<div class="wrap-input1 validate-input" data-validate = "Name is required">
-					<input class="input1" type="text" name="contactname" placeholder="Name" value={this.state.contactname} onChange={this.textContactHandler}/>
+					<input class="input1" type="text" name="fullname" placeholder="Name" value={this.state.fullname} onChange={this.textContactHandler}/>
 					<span class="shadow-input1"></span>
 				</div>
 
@@ -54,7 +58,7 @@ export default class Contact extends Component {
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Phone Number is required">
-					<input class="input1" type="number" name="number" placeholder="Phone Number" value={this.state.number} onChange={this.textContactHandler}/>
+					<input class="input1" type="number" name="phone" placeholder="Phone Number" value={this.state.phone} onChange={this.textContactHandler}/>
 					<span class="shadow-input1"></span>
 				</div>
 

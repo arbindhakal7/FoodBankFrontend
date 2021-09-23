@@ -30,6 +30,7 @@ import ViewProfile from "./Admin/AdminViewProfile";
 import UpdateProfile from "./Admin/AdminUpdateProfile";
 import UpdateUserRole from "./Admin/AdminUpdateUser";
 import Contact from "./Contact";
+import ViewMessage from "./Admin/AdminViewMessages";
 // import ProfileUpload from "./ProfileUpload";
 
 class Start extends Component {
@@ -140,10 +141,15 @@ class Start extends Component {
               path="/admindashboard/updateprofile"
               component={UpdateProfile}
             />
+            
 
             <AdminRoute
               path="/admindashboard/updateuserrole/:id"
               component={UpdateUserRole}
+            />
+            <AdminRoute
+              path="/admindashboard/messages"
+              component={ViewMessage}
             />
 
             <Route>
