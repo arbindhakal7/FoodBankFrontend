@@ -29,6 +29,7 @@ import UpdateRequestStatus from "./Admin/AdminUpdateRequest";
 import ViewProfile from "./Admin/AdminViewProfile";
 import UpdateProfile from "./Admin/AdminUpdateProfile";
 import UpdateUserRole from "./Admin/AdminUpdateUser";
+import Contact from "./Contact";
 // import ProfileUpload from "./ProfileUpload";
 
 class Start extends Component {
@@ -40,6 +41,10 @@ class Start extends Component {
             <Route path="/" exact component={Home} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
+            <Route
+              path="/contact"
+              component={Contact}
+            />
             <Route path="/userdash" component={UserDashboard} />
             <PrivateRoute
               path="/userdashboard/adddonation"
