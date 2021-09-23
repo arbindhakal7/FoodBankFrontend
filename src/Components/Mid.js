@@ -1,7 +1,8 @@
 import { Component } from "react";
 
-import donation from './images/donation.jpg'
-import donations from './images/donations.jpg'
+import donated from './images/donated.jpeg'
+import donate from './images/donate.jpeg'
+
 
 
 
@@ -12,8 +13,10 @@ export default class Mid extends Component {
   render() {
     return (          
          <div>
-          <img src={donation} alt="donation" />
-          <img src={donations} alt="donations" />
+           <img src={donate} alt="donate" />
+           <img src={donated} alt="donated" />
+
+          
       
     </div>
     );

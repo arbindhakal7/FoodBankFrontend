@@ -29,6 +29,7 @@ import UpdateRequestStatus from "./Admin/AdminUpdateRequest";
 import ViewProfile from "./Admin/AdminViewProfile";
 import UpdateProfile from "./Admin/AdminUpdateProfile";
 import UpdateUserRole from "./Admin/AdminUpdateUser";
+// import ProfileUpload from "./ProfileUpload";
 
 class Start extends Component {
   render() {
@@ -72,6 +73,12 @@ class Start extends Component {
               path="/userdashboard/updaterequest/:id"
               component={UpdateRequest}
             />
+
+            {/* <PrivateRoute
+              path="/userdashboard/uploadimage/"
+              component={ProfileUpload}
+            /> */}
+
             <PrivateRoute path="/userdashboard/Foodbank" component={FoodBank} />
 
             <AdminRoute path="/admindash/" component={AdminDashboard} />

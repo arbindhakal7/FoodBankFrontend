@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import jwt_decode from "jwt-decode";
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
 export default class Profile extends React.Component {
@@ -16,7 +17,7 @@ export default class Profile extends React.Component {
       email: "",
       dateOfBirth: "",
       gender: "",
-      image: "",
+      profile_pic: "",
       config: {
         headers: { Authorization: localStorage.getItem("token") },
         isUpdate: false,
@@ -37,7 +38,7 @@ export default class Profile extends React.Component {
           email: res.data.email,
           dateOfBirth: res.data.dateOfBirth,
           gender: res.data.gender,
-          image: res.data.image,
+          profile_pic: res.data.profile_pic,
         });
       });
   };
@@ -79,30 +80,6 @@ export default class Profile extends React.Component {
         .catch((err) => console.log(err.response.data.message));
   };
 
-  //  changeFileHandler = (e) => {
-  //       this.setState({
-  //           filename: e.target.files[0]
-  //       })
-  //   }
-
-  // sendData = (e) => {
-  //   e.preventDefault();
-  //   const con = {
-  //       headers: {
-  //           'authorization': `Bearer ${localStorage.getItem("token")}`
-  //       }
-  //   }
-  //   const data = new FormData();    
-  //   alert("clicked")
-  //   data.append('myimage', this.state.filename)
-  //   axios.post("http://localhost:90/profile/uploadimage", data,con)
-  //       .then((result) => {
-  //           alert("chnaged")
-  //           console.log(result)
-  //       })
- 
-  //       .catch()
-  //     }   
 
   render() {
     return (
@@ -110,10 +87,13 @@ export default class Profile extends React.Component {
         <NavBar history={this.props.history} />
 
         <div className="container">
-        <li>
-   <input type="file" name="files" onChange={this.changeFileHandler} /></li> 
-   <button onClick={this.sendData}>Send</button>
+   
           <Form>
+            
+          <img className="medium"  src={"http://localhost:90/"+this.state.profile_pic}  />
+          <br/>
+        <Link to class = "button" to = "/Profile/uploadimage">Upload Image</Link>
+      
             <FormGroup>
               <Label for="fullname">Full Name</Label>
               <Input

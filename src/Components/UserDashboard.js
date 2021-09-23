@@ -83,7 +83,6 @@ export default class UserDashboard extends Component {
               <section class="4u">
                 <a href="/!#" class="image feature"></a>
                 <img src={foodbanks} alt="foodbank" />
-                <h3>Food Bank</h3>
                 <FoodBankList />
                 
               </section>

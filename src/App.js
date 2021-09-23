@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import './css/style.css'
-//  import './css/skel.css'
+// import './css/skel.css'
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom';
