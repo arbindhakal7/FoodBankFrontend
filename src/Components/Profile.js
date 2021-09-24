@@ -92,7 +92,7 @@ export default class Profile extends React.Component {
             
           <img className="medium"  src={"http://localhost:90/"+this.state.profile_pic}  />
           <br/>
-        <Link to class = "button" to = "/Profile/uploadimage">Upload Image</Link>
+        <Link to class = "button" to = "/userdashboard/uploadimage">Upload Image</Link>
       
             <FormGroup>
               <Label for="fullname">Full Name</Label>

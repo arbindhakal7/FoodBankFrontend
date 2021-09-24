@@ -31,7 +31,7 @@ import UpdateProfile from "./Admin/AdminUpdateProfile";
 import UpdateUserRole from "./Admin/AdminUpdateUser";
 import Contact from "./Contact";
 import ViewMessage from "./Admin/AdminViewMessages";
-// import ProfileUpload from "./ProfileUpload";
+import ProfileUpload from "./ProfileUpload";
 
 class Start extends Component {
   render() {
@@ -80,10 +80,10 @@ class Start extends Component {
               component={UpdateRequest}
             />
 
-            {/* <PrivateRoute
+            <PrivateRoute
               path="/userdashboard/uploadimage/"
               component={ProfileUpload}
-            /> */}
+            />
 
             <PrivateRoute path="/userdashboard/Foodbank" component={FoodBank} />
 

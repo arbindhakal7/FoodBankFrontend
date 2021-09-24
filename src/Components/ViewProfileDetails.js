@@ -14,6 +14,8 @@ export default class ViewProfileDetails extends React.Component {
       email: "",
       dateOfBirth: "",
       gender: "",
+      profile_pic: "",
+      
       config: {
         headers: { Authorization: localStorage.getItem("token") },
         isUpdate: false,
@@ -35,7 +37,7 @@ export default class ViewProfileDetails extends React.Component {
           email: res.data.email,
           dateOfBirth: res.data.dateOfBirth,
           gender: res.data.gender,
-          image: res.data.image,
+          profile_pic: res.data.profile_pic,
         });
       });
   };
@@ -48,9 +50,10 @@ export default class ViewProfileDetails extends React.Component {
         <div id="main" class="wrapper style1">
           <section class="container">
             <section class="4u">
+            {this.state.profile_pic}
               <h3>Your Info</h3>
+                <img src={"http://localhost:90/"+this.state.profile_pic}/>
               <p>
-                {" "}
                 Full Name : <i>{this.state.fullname} </i>
               </p>
               <p>
