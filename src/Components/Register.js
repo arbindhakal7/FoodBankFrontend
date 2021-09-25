@@ -36,14 +36,14 @@ export default class Register extends Component {
     return (
       <div className="Nav">
         <HomeNavBar />
-        <div class="main">
+        <div class="container">
           <section class="sign-up">
             <div class="signup-content">
               <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
                 <form method="POST" class="register-form" id="register-form">
                   <div class="form-group">
-                    <label for="name">
+                    <label for="fullname">
                       <i class="zmdi zmdi-account material-icons-name"></i>
                     </label>
                     <input
@@ -67,8 +67,8 @@ export default class Register extends Component {
                     />
                   </div>
                   <div class="form-group">
-                    <label for="email">
-                      <i class="zmdi zmdi-email"></i>
+                    <label for="phone">
+                      <i class="zmdi zmdi-phone"></i>
                     </label>
                     <input
                       type="number"

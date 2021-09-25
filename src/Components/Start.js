@@ -141,7 +141,6 @@ class Start extends Component {
               path="/admindashboard/updateprofile"
               component={UpdateProfile}
             />
-            
 
             <AdminRoute
               path="/admindashboard/updateuserrole/:id"

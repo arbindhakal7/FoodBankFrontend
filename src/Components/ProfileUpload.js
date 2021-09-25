@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
-import HomeNavBar from './HomeNav';
+import NavBar from './NavBar';
 class ProfileUpload extends Component{
     state = {
         filename: null
@@ -33,7 +33,7 @@ class ProfileUpload extends Component{
     render(){
         return(
             <div>
-            <HomeNavBar/>
+           <NavBar history={this.props.history} />
             <li>
    <input type="file" name="files" onChange={this.changeFileHandler} /></li> 
    <button onClick={this.sendData}>Send</button>

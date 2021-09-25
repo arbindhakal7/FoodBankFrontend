@@ -50,7 +50,6 @@ export default class ViewProfileDetails extends React.Component {
         <div id="main" class="wrapper style1">
           <section class="container">
             <section class="4u">
-            {this.state.profile_pic}
               <h3>Your Info</h3>
                 <img src={"http://localhost:90/"+this.state.profile_pic}/>
               <p>

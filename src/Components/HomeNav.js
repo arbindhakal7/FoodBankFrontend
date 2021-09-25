@@ -45,7 +45,7 @@ export default class HomeNavBar extends Component {
                       Request Food
                     </a>
                     <a href="login" class="dropdown-item">
-                      View Charities
+                      View Food Banks
                     </a>
                   </div>
                 </div>

@@ -41,9 +41,7 @@ export default class Message extends Component {
                 <th scope="col">Contact Name</th>
                 {/* <th scope="col">Phone Number</th> */}
                 <th scope="col">Email</th>
-                <th scope="col">Message</th>
-
-                <th scope="col">Action</th>    
+                <th scope="col">Message</th>  
               </tr>
             </thead>
             <tbody>
@@ -54,12 +52,6 @@ export default class Message extends Component {
                   {/* <td>{contact.phone}</td> */}
                   <td>{contact.email}</td>
                   <td>{contact.message}</td>
-                  <td>
-                      <Link class="mr-2" to="/admindashboard/messages">
-                        {" "}
-                        Manage
-                      </Link>
-                    </td>
                 </tr>
               ))}
             </tbody>

@@ -4,7 +4,10 @@ import jwt_decode from "jwt-decode";
 import foodbanks from "../css/images/FoodBanks.jpg";
 import { Link } from "react-router-dom";
 import FoodBankList from "./FoodBanksList";
-import users from "../css/images/users.png";
+import users from "../css/images/users.jpg";
+import donates from "../Components/images/donations.jpg"
+import donations from "../Components/images/donates.png"
+
 
 export default class UserDashboard extends Component {
   constructor(props) {
@@ -80,15 +83,22 @@ export default class UserDashboard extends Component {
                 </Link>
               </section>
 
-              <section class="4u">
+              <pre>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              </pre>
+
+            <section>
+            <a href="/!#" class="image feature"></a>
+                <img src={donates} alt="donates" />
+                <img src={donations} alt="donations" />
+
+            </section>
+
+              <section class="container">
                 <a href="/!#" class="image feature"></a>
                 <img src={foodbanks} alt="foodbank" />
                 <FoodBankList />
-                
               </section>
-
-
-
             </div>
           </section>
         </div>
