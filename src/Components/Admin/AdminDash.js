@@ -60,8 +60,6 @@ export default class AdminDashboard extends Component{
 
                         <section class="4u">                            
                             <a href="/!#" class="image feature"></a>
-                            <img src={foodbanks} alt="foodbanks" />
-                            <h3>Food Bank</h3>
                             <AdminFoodBankList/>
                     
                         </section>
