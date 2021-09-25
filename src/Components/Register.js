@@ -27,7 +27,7 @@ export default class Register extends Component {
     axios
       .post("http://localhost:90/api/user/register", this.state)
       .then((res) => {
-        this.props.history.push("/");
+        this.props.history.push("/login");
       })
       .catch((err) => console.log(err.response.data));
   };
