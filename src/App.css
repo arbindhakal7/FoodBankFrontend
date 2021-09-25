@@ -2,6 +2,92 @@
   text-align: center;
 }
 
+/* .Primary{ 
+
+  border:1px solid #000000; 
+
+  color:#fff; 
+
+  background: #6b5cc5; 
+
+  padding:1em;
+
+  font-size:1em; 
+  justify-content: center;
+
+  line-height:1; 
+
+  border-radius: 1.2em;
+
+} */
+
+.Primary {
+
+  padding:0.875rem 2.1875rem;
+
+  margin:inherit;
+
+  border-radius: 8rem;
+
+  border: 0;
+
+  font-weight: 400;
+
+  transition: opacity 300ms ease-in-out;
+
+  background-image:linear-gradient(to right, #5c055f, #e9be32);
+
+  cursor: pointer;
+
+  position: relative;
+
+  font-size: rem;
+
+  color: #ffffff;
+
+  font-size: 0.80rem;
+
+  display: inline-block;
+
+}
+
+.class{
+  justify-content:center;
+
+padding: 8rem;
+  background-color: #f3f5f4;
+}
+
+.class {
+
+  width: 350px;
+
+  margin: 1rem auto;
+
+
+}
+.home{
+  background-color: rgb(247, 229, 210);
+}
+
+.aboutus{
+  background-color: rgb(247, 229, 210);
+}
+
+.tab-content{
+  background-color: rgb(247, 229, 210);
+}
+
+/* .dashboard{
+    display: flex;
+  
+    justify-content: center;
+  
+    background: #ccffee;
+  
+
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -58,7 +144,7 @@
 /* scroll bar */
  .my-custom-scrollbar {
   position: relative;
-  height: 300px;
+  height: 400px;
   overflow: auto;
   }
   .table-wrapper-scroll-y {

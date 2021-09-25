@@ -34,9 +34,13 @@ class ProfileUpload extends Component{
         return(
             <div>
            <NavBar history={this.props.history} />
-            <li>
+        <div className = "class" >
+
+       <li>
    <input type="file" name="files" onChange={this.changeFileHandler} /></li> 
-   <button onClick={this.sendData}>Send</button>
+   <br/>
+   <button className="Primary" onClick={this.sendData}>Send</button>
+        </div>
    </div>
         )
     }

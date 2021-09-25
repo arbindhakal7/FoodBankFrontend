@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import jwt_decode from "jwt-decode";
-import foodbanks from "../css/images/FoodBanks.jpg";
 import { Link } from "react-router-dom";
 import FoodBankList from "./FoodBanksList";
-import users from "../css/images/users.jpg";
-import donates from "../Components/images/donations.jpg"
-import donations from "../Components/images/donates.png"
+import capture from "./images/Capture.PNG"
 
 
 export default class UserDashboard extends Component {
@@ -60,46 +57,11 @@ export default class UserDashboard extends Component {
               <br />
               <span class="byline">Welcome to the User Dashboard</span>
             </header>
-            <div class="row no-collapse-1">
-              <section class="4u">
-                <a href="!#" class="image feature"></a>
-                <img src={users} alt="Users" />
-                <h3>Your Info</h3>
-                <p>
-                  Full Name : <i>{this.state.fullname}</i>
-                </p>
-                <p>
-                  Phone Number : <i>{this.state.phone}</i>
-                </p>
-                <p>
-                  Email : <i>{this.state.email}</i>
-                </p>
 
-                <Link
-                  class="btn btn-primary mr-2"
-                  to="/userdashboard/profile/:id"
-                >
-                  Edit
-                </Link>
-              </section>
-
-              <pre>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              </pre>
-
-            <section>
-            <a href="/!#" class="image feature"></a>
-                <img src={donates} alt="donates" />
-                <img src={donations} alt="donations" />
-
-            </section>
-
-              <section class="container">
-                <a href="/!#" class="image feature"></a>
-                <img src={foodbanks} alt="foodbank" />
+            <section class="container">
+              <h2>Food Banks</h2>
                 <FoodBankList />
               </section>
-            </div>
           </section>
         </div>
       </div>
