@@ -38,7 +38,7 @@ export default class AdminAddFoodBank extends Component {
     return (
       <div>
         <AdminNavBar history={this.props.history} />
-
+        <div className = 'foodbank'>
         <div className="container">
           <Form>
             <FormGroup>
@@ -86,6 +86,7 @@ export default class AdminAddFoodBank extends Component {
             </Button>
           </Form>
         </div>
+      </div>
       </div>
     );
   }

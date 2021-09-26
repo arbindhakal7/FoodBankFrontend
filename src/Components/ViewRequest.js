@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import trust from "./images/trust.png"
 import NavBar from "./NavBar";
 
 export default class ViewRequests extends Component {
@@ -113,6 +114,9 @@ export default class ViewRequests extends Component {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className = "classs">
+          <img src ={trust}  alt = "trust"/>
           </div>
         </div>
       </div>

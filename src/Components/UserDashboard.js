@@ -3,8 +3,7 @@ import NavBar from "./NavBar";
 import jwt_decode from "jwt-decode";
 import { Link } from "react-router-dom";
 import FoodBankList from "./FoodBanksList";
-import capture from "./images/Capture.PNG"
-
+import welcome from "./images/welcome.PNG";
 
 export default class UserDashboard extends Component {
   constructor(props) {
@@ -50,18 +49,20 @@ export default class UserDashboard extends Component {
     return (
       <div>
         <NavBar history={this.props.history} />
-        <div id="main" class="wrapper style1">
+        <div>
           <section class="container">
-            <header class="major">
-              <h2>Hello, {this.state.fullname}</h2>
-              <br />
-              <span class="byline">Welcome to the User Dashboard</span>
-            </header>
+            <div>
+              <header class="major">
+                <h2>
+                  <img src={welcome} alt="welcome" /> {this.state.fullname}
+                </h2>
+                &nbsp;&nbsp;{" "}
+                <span class="byline">This is your User Dashboard</span>
+              </header>
 
-            <section class="container">
-              <h2>Food Banks</h2>
-                <FoodBankList />
-              </section>
+              <h2>&nbsp;&nbsp;Food Banks</h2>
+              <FoodBankList />
+            </div>
           </section>
         </div>
       </div>

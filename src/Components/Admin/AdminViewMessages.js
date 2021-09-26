@@ -36,7 +36,8 @@ export default class ViewMessage extends Component {
         <div>
             <AdminNavBar/>
       <div className="container">
-        <div className="py-4">
+        <br/>
+        <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
           <table class="table border shadow">
             <thead class="thead-dark">
               <tr>
@@ -44,7 +45,6 @@ export default class ViewMessage extends Component {
                 <th scope="col">Full Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Message</th>
-                <th scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -54,7 +54,6 @@ export default class ViewMessage extends Component {
                   <td>{contact.fullname}</td>
                   <td>{contact.email}</td>
                   <td>{contact.message}</td>
-                  <td>{contact.status}</td>
                    </tr>
               ))}
             </tbody>

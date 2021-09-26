@@ -63,6 +63,7 @@ export default class AdminViewRequests extends Component {
         <div className="container">
           <div className="py-4">
             <h1>Request List</h1>
+            <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table border shadow">
               <thead class="thead-dark">
                 <tr>
@@ -94,7 +95,7 @@ export default class AdminViewRequests extends Component {
                       >
                         Edit
                       </Link>
-
+                      &nbsp;
                       <Link
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(request._id)}
@@ -106,6 +107,7 @@ export default class AdminViewRequests extends Component {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       </div>

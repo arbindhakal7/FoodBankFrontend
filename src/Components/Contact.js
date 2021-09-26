@@ -44,7 +44,7 @@ export default class Contact extends Component {
 
 			<form class="contact1-form validate-form">
 				<span class="contact1-form-title">
-					Get in touch
+					Get in touch !!!
 				</span>
 
 				<div class="wrap-input1 validate-input" data-validate = "Name is required">

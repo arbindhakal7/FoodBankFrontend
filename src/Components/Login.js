@@ -63,6 +63,7 @@ export default class Login extends Component {
       <div className="Nav">
         <HomeNavBar />
         <div className="container">
+        <div className = 'register'>
           <div className="signin-content">
             <div className="signin-image">
               <figure>
@@ -116,6 +117,7 @@ export default class Login extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

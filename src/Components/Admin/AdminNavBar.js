@@ -21,7 +21,7 @@ return(
                             <Link to='/admindash/nav'>Dashboard</Link>                            
                         </NavItem>
                        <NavItem id="navitem">
-                            <Link to='/admindash/nav'>Admin Profile</Link>
+                            <Link to='/admindashboard/viewprofile'>Admin Profile</Link>
                             <ul>
                                 <Link to='/admindashboard/viewprofile' id="navlist">View Profile</Link>
                                 <Link to='/admindashboard/updateprofile' id="navlist">Edit Profile</Link>
@@ -37,7 +37,7 @@ return(
                             <NavLink to='/admindashboard/adminviewrequests'>Requests List</NavLink>
                         </NavItem>
                         <NavItem id="navitem">
-                            <NavLink to='/admindash/nav'>Food Bank</NavLink>
+                            <NavLink to='/admindashboard/adminfoodbanks'>Food Bank</NavLink>
                             <ul>
                                 <Link to='/admindashboard/adminaddfoodbank' id="navlist">Add Food Bank</Link>
                                 <Link to='/admindashboard/adminfoodbanks' id="navlist">View Food Banks</Link>

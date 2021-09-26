@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import NavBar from "./NavBar";
+import thanks from "./images/thanks.jpg"
 
 export default class ViewDonations extends Component {
   constructor(props) {
@@ -107,6 +108,9 @@ export default class ViewDonations extends Component {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className = "classs">
+          <img src ={thanks}  alt = "trust"/>
           </div>
         </div>
       </div>

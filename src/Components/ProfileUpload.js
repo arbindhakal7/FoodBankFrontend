@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
+import upload from './images/upload.png'
 class ProfileUpload extends Component{
     state = {
         filename: null
@@ -34,6 +35,8 @@ class ProfileUpload extends Component{
         return(
             <div>
            <NavBar history={this.props.history} />
+           <img src = {upload} alt = "upload"/>
+
         <div className = "class" >
 
        <li>
@@ -41,6 +44,7 @@ class ProfileUpload extends Component{
    <br/>
    <button className="Primary" onClick={this.sendData}>Send</button>
         </div>
+
    </div>
         )
     }

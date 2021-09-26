@@ -17,9 +17,10 @@ export default class Footer extends Component {
                         </div>
                         <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
                             <h6 class="mt-55 mt-2 text-muted bold-text"><b>Contact us</b></h6>
-                            <h6 class="mt-55 mt-2 text-muted bold-text"><b>helpbydonating@gmail.com</b></h6>
+                            <h6 class="mt-55 mt-2 text-muted bold-text"><b>foodbank@gmail.com</b></h6>
 
                         </div>
+                        
                         <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
                             <h6 class="text-muted bold-text"><b>Arbin Dhakal</b></h6>
                             <h6 class="mt-55 mt-2 text-muted bold-text"><b>arbin.dhakal123@gmail.com</b></h6>

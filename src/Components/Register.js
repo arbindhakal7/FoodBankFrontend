@@ -36,7 +36,7 @@ export default class Register extends Component {
     return (
       <div className="Nav">
         <HomeNavBar />
-        <div class="container">
+        <div className="container">
           <section class="sign-up">
             <div class="signup-content">
               <div class="signup-form">
@@ -106,9 +106,7 @@ export default class Register extends Component {
                 </form>
               </div>
               <div class="signup-image">
-                <figure>
-                  <img src="images/signup-image.jpg" alt="sign up image" />
-                </figure>
+                <img src="images/signup-image.jpg" alt="sign up image" />
               </div>
             </div>
           </section>

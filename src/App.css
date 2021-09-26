@@ -22,20 +22,19 @@
 } */
 
 .Primary {
+  padding: 0.875rem 2rem;
 
-  padding:0.875rem 2.1875rem;
-
-  margin:inherit;
+  margin: inherit;
 
   border-radius: 8rem;
 
   border: 0;
 
-  font-weight: 400;
+  font-weight: 200;
 
   transition: opacity 300ms ease-in-out;
 
-  background-image:linear-gradient(to right, #5c055f, #e9be32);
+  background-image: linear-gradient(to right, #c5330f, #c5330f);
 
   cursor: pointer;
 
@@ -43,39 +42,66 @@
 
   font-size: rem;
 
-  color: #ffffff;
+  color: #a1a1a1;
 
-  font-size: 0.80rem;
+  font-size: 0.8rem;
 
   display: inline-block;
-
 }
 
-.class{
-  justify-content:center;
-
-padding: 8rem;
-  background-color: #f3f5f4;
+.classs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  flex: 1 100%;
+  width: 92.5%;
+  align-self: center;
+  padding-top: 3.5em;
+  padding-bottom: 2.5em;
+  margin: 0;
 }
 
 .class {
+  justify-content: center;
 
+  background-color: #a1ca40;
+}
+
+.classes {
+  justify-content: center;
+
+  background-color: #f3f5f4;
+}
+.class {
   width: 350px;
-
-  margin: 1rem auto;
-
-
+  background-color: #f3f5f4;
+  margin: 0rem auto;
 }
-.home{
+.register {
+  width: 1000px;
+  margin: 5rem auto;
+}
+
+.updaterole {
+  width: 1000px;
+  margin: 0rem auto;
+}
+.foodbank {
+  width: 1000px;
+  margin: 5rem auto;
+}
+
+.home {
   background-color: rgb(247, 229, 210);
 }
 
-.aboutus{
+.aboutus {
   background-color: rgb(247, 229, 210);
 }
 
-.tab-content{
-  background-color: rgb(247, 229, 210);
+.tab-content {
+  background-color: rgb(240, 244, 245);
 }
 
 /* .dashboard{
@@ -129,29 +155,31 @@ padding: 8rem;
   max-width: 400px;
   padding-left: 20px;
   padding-right: 20px;
- }
- 
- .inputField {
-  padding-top: 16px;
- }
+}
 
- *, *:before, *:after {
+.inputField {
+  padding-top: 16px;
+}
+
+*,
+*:before,
+*:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
- 
+
 /* scroll bar */
- .my-custom-scrollbar {
+.my-custom-scrollbar {
   position: relative;
   height: 400px;
   overflow: auto;
-  }
-  .table-wrapper-scroll-y {
+}
+.table-wrapper-scroll-y {
   display: block;
-  }
+}
 
- .input {
+.input {
   box-sizing: border-box;
   outline: none;
   border: solid 2px #1189de;
@@ -161,14 +189,13 @@ padding: 8rem;
   padding: 12px;
   font-size: 14px;
   background: rgba(255, 255, 255, 1);
- }
- 
- .submitButton {
+}
+
+.submitButton {
   padding-top: 16px;
- }
- 
- 
- /* .btn {
+}
+
+/* .btn {
   width: 100%;
   min-width: 280px;
   color: #565656;
@@ -179,4 +206,3 @@ padding: 8rem;
   border-radius: 4px;
   background: #fff;
   cursor: pointer; } */
- 

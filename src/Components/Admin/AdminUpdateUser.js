@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
+import role from '../images/role.png'
 import { useParams, Redirect } from "react-router-dom";
 import NavBarAdmin from "./AdminNavBar";
 
@@ -78,6 +79,8 @@ class UpdateForm extends Component {
     return (
       <div>
         <NavBarAdmin history={this.props.history} />
+        <div className = 'updaterole'>
+        <img src={role} alt="role" />
         <div className="container">
           <Form>
             <FormGroup>
@@ -104,6 +107,7 @@ class UpdateForm extends Component {
             </Button>
           </Form>
         </div>
+      </div>
       </div>
     );
   }

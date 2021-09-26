@@ -3,8 +3,7 @@ import NavBarAdmin from './AdminNavBar'
 import jwt_decode from 'jwt-decode'
 import AdminUserList from './AdminUserList'
 import users from "../images/users.png"
-import contact from "../images/contact.png"
-import foodbanks from '../images/FoodBanks.jpg'
+import welcome from "../images/welcome.PNG"
 import AdminFoodBankList from './AdminFoodBankList'
 import Message from './Messages'
 
@@ -44,29 +43,25 @@ export default class AdminDashboard extends Component{
         return(
             <div>
                 <NavBarAdmin history = {this.props.history}/>
-                <div id="main" class="wrapper style1">
+                <div>
                 <section class="container">
                     <header class="major">
-                        <h2>Hello : {this.state.fullname} </h2>
-                        <span class="byline">Welcome to Admin Dashboard</span>
+                        <h2><img src = {welcome} alt = "welcome"/> {this.state.fullname} </h2>
+                        <span class="byline">This is your Admin Dashboard</span>
                     </header>
                     <div>
                         <section class="4u">                                  
                             <a href="!#" class="image feature"></a>
-                            <img src={users} alt="Users" />
-                            <h3>Users List </h3>
+                             <img src={users} alt="Users" />
+                            
+                            <h3>&nbsp;&nbsp;Users List </h3>
                             <AdminUserList/>
-                        </section>
-
-                        <section class="4u">                            
+                                          
                             <a href="/!#" class="image feature"></a>
                             <AdminFoodBankList/>
-                    
-                        </section>
-                        <section class="4u">
+                                        
                             <a href="/!#" class="image feature"></a>
-                            <img src={contact} alt="contact" />
-                            <h3>Contact Messages</h3>
+                            <h3> &nbsp;&nbsp;Contact Messages</h3>
                            <Message/>
                         </section>
 

@@ -17,7 +17,7 @@ export default function NavBar(props) {
               <Link to="/userdash/nav">Dashboard</Link>
             </NavItem>
             <NavItem id="navitem">
-              <Link to="/userdash/nav">User Profile</Link>
+              <Link to="/userdashboard/viewprofiledetails">User Profile</Link>
               <ul>
                 <Link to="/userdashboard/viewprofiledetails" id="navlist">
                   View Profile
@@ -28,7 +28,7 @@ export default function NavBar(props) {
               </ul>
             </NavItem>
             <NavItem id="navitem">
-              <NavLink to="/userdash/nav">Donate</NavLink>
+              <NavLink to="/userdashboard/viewdonation">Donate</NavLink>
               <ul>
                 <Link to="/userdashboard/adddonation" id="navlist">
                   Add Donation
@@ -39,7 +39,7 @@ export default function NavBar(props) {
               </ul>
             </NavItem>
             <NavItem id="navitem">
-              <NavLink to="/userdash/nav">Requests</NavLink>
+              <NavLink to="/userdashboard/viewrequest">Requests</NavLink>
               <ul>
                 <Link to="/userdashboard/addrequest" id="navlist">
                   Add Request

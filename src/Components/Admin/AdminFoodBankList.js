@@ -34,6 +34,7 @@ export default class AdminFoodBankList extends Component {
       <div className="container">
         <div className="py-4">
           <h1>Food Bank List</h1>
+          <div className="py-table-wrapper-scroll-y my-custom-scrollbar">
           <table class="table border shadow">
             <thead class="thead-dark">
               <tr>
@@ -61,6 +62,7 @@ export default class AdminFoodBankList extends Component {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     );

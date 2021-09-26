@@ -100,7 +100,7 @@ export default class AdminViewDonations extends Component {
                       >
                         Edit
                       </Link>
-
+                      &nbsp;
                       <Link
                         class="btn btn-danger"
                         onClick={() => this.handleDelete(donation._id)}
