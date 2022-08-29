@@ -19,7 +19,7 @@ export default class AddRequest extends Component {
         headers: { Authorization: localStorage.getItem("token") },
       },
     };
-  }
+  } 
 
   handleChange = (event) => {
     this.setState(

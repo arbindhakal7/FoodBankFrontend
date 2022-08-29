@@ -17,7 +17,7 @@ export default class FoodBanks extends Component {
       },
     };
   }
-
+  
   componentDidMount() {
     Axios.get("http://localhost:90/api/FoodBank", this.state.config)
       .then((res) => {

@@ -6,7 +6,7 @@ export default function NavBar(props) {
   const handleLogout = () => {
     if (window.confirm("Log out?")) localStorage.removeItem("token");
     props.history.push("/");
-  };
+  }; 
 
   return (
     <div>

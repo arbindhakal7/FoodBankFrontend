@@ -12,7 +12,7 @@ export default class Login extends Component {
       email: "",
       password: "",
       isUser: false,
-      isAdmin: false,
+      isAdmin: false, 
     };
     this.onChangeLogin = this.onChangeLogin.bind(this);
     this.funLogin = this.funLogin.bind(this);
@@ -36,7 +36,7 @@ export default class Login extends Component {
       if (this.state.isUser) {
         this.props.history.push(`/userdash/:id`);
       } else if (this.state.isAdmin)
-      this.props.history.push(`/admindash/:id`);
+        this.props.history.push(`/admindash/:id`);
 
     });
     e.preventDefault();
@@ -63,61 +63,61 @@ export default class Login extends Component {
       <div className="Nav">
         <HomeNavBar />
         <div className="container">
-        <div className = 'register'>
-          <div className="signin-content">
-            <div className="signin-image">
-              <figure>
-                <img src="images/signin-image.jpg" alt="sing up image" />
-              </figure>
-            </div>
+          <div className='register'>
+            <div className="signin-content">
+              <div className="signin-image">
+                <figure>
+                  <img src="images/signin-image.jpg" alt="sing up image" />
+                </figure>
+              </div>
 
-            <div className="signin-form">
-              <h2 className="form-title">Log In</h2>
-              <form method="POST" class="register-form" id="login-form">
-                <div className="form-group">
-                  <label htmlFor="your_name">
-                    <i className="zmdi zmdi-account material-icons-name"></i>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={this.onChangeLogin}
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="your_pass">
-                    <i className="zmdi zmdi-lock"></i>
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={this.onChangeLogin}
-                  />
-                </div>
+              <div className="signin-form">
+                <h2 className="form-title">Log In</h2>
+                <form method="POST" class="register-form" id="login-form">
+                  <div className="form-group">
+                    <label htmlFor="your_name">
+                      <i className="zmdi zmdi-account material-icons-name"></i>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      value={this.state.email}
+                      onChange={this.onChangeLogin}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="your_pass">
+                      <i className="zmdi zmdi-lock"></i>
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      value={this.state.password}
+                      onChange={this.onChangeLogin}
+                    />
+                  </div>
 
-                <div className="form-group form-button">
-                  <input
-                    type="submit"
-                    name="signin"
-                    id="signin"
-                    class="form-submit"
-                    value="Log in"
-                    onClick={this.funLogin}
-                  />
-                  <p class="copyright">
-                    Don't have an account?{" "}
-                    <Link to="./Register">Register Here</Link>
-                  </p>
-                </div>
-              </form>
+                  <div className="form-group form-button">
+                    <input
+                      type="submit"
+                      name="signin"
+                      id="signin"
+                      class="form-submit"
+                      value="Log in"
+                      onClick={this.funLogin}
+                    />
+                    <p class="copyright">
+                      Don't have an account?{" "}
+                      <Link to="./Register">Register Here</Link>
+                    </p>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     );
   }

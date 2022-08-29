@@ -21,7 +21,7 @@ export default class ViewDonations extends Component {
       config: {
         headers: { Authorization: localStorage.getItem("token") },
       },
-    };
+    }; 
   }
 
   handleDelete = (id) => {
@@ -109,8 +109,8 @@ export default class ViewDonations extends Component {
               </tbody>
             </table>
           </div>
-          <div className = "classs">
-          <img src ={thanks}  alt = "trust"/>
+          <div className="classs">
+            <img src={thanks} alt="trust" />
           </div>
         </div>
       </div>

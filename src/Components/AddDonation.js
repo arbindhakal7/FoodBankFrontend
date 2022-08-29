@@ -27,7 +27,7 @@ export default class AddDonation extends Component {
       },
       () => console.log(this.state)
     );
-  };
+  }; 
 
   handleSubmit = (event) => {
     if (window.confirm("Are you ready to donate Food?")) event.preventDefault();

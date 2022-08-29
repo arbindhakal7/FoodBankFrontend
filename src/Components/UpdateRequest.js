@@ -53,7 +53,7 @@ class UpdateForm extends Component {
       .catch((err) => console.log(err.response));
   };
 
-  handleUpdate = () => {};
+  handleUpdate = () => { };
   state = {
     redirect: false,
   };

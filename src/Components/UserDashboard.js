@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import jwt_decode from "jwt-decode";
-import { Link } from "react-router-dom";
 import FoodBankList from "./FoodBanksList";
 import welcome from "./images/welcome.PNG";
 

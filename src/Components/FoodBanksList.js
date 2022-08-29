@@ -69,3 +69,4 @@ export default class FoodBanks extends Component {
     );
   }
 }
+

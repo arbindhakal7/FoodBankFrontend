@@ -34,7 +34,7 @@ export default class HomeNavBar extends Component {
                     href="#"
                     class="nav-link dropdown-toggle"
                     data-toggle="dropdown"
-                  >
+                  > 
                     Features
                   </a>
                   <div class="dropdown-menu">

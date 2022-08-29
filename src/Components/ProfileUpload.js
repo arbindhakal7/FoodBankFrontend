@@ -2,7 +2,7 @@ import { Component } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
 import upload from './images/upload.png'
-class ProfileUpload extends Component{
+class ProfileUpload extends Component {
     state = {
         filename: null
     }
@@ -11,42 +11,42 @@ class ProfileUpload extends Component{
             filename: e.target.files[0]
         })
     }
-    sendData =async  (e) => {
+    sendData = async (e) => {
         e.preventDefault();
         const con = {
             headers: { Authorization: localStorage.getItem("token") },
 
         }
-        
-        const data = new FormData();    
+
+        const data = new FormData();
         // alert("clicked")
         data.append('myimage', this.state.filename)
-        const result = await axios.post("http://localhost:90/api/profile/uploadimage", data,con)
-            // .then((result) => {
-                alert("changed")
-                console.log(result)
-                this.props.history.push("/userdashboard/viewprofiledetails");
+        const result = await axios.post("http://localhost:90/api/profile/uploadimage", data, con)
+        // .then((result) => {
+        alert("changed")
+        console.log(result)
+        this.props.history.push("/userdashboard/viewprofiledetails");
 
-            // })
-     
-            // .catch()
+        // })
+
+        // .catch()
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
-           <NavBar history={this.props.history} />
-           <img src = {upload} alt = "upload"/>
+                <NavBar history={this.props.history} />
+                <img src={upload} alt="upload" />
 
-        <div className = "class" >
+                <div className="class" >
 
-       <li>
-   <input type="file" name="files" onChange={this.changeFileHandler} /></li> 
-   <br/>
-   <button className="Primary" onClick={this.sendData}>Send</button>
-        </div>
+                    <li>
+                        <input type="file" name="files" onChange={this.changeFileHandler} /></li>
+                    <br />
+                    <button className="Primary" onClick={this.sendData}>Send</button>
+                </div>
 
-   </div>
+            </div>
         )
     }
-    }
-    export default ProfileUpload;
+}
+export default ProfileUpload;

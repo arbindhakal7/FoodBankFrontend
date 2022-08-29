@@ -133,6 +133,7 @@ export class UpdateForm extends Component {
                 <option value="any">Any of the above</option>
               </Input>
             </FormGroup>
+            
             <FormGroup>
               <Label for="country">Country</Label>
               <Input

@@ -8,7 +8,7 @@ export default class Home extends Component {
       <div>
         <HomeNavBar />
         <div>
-         <Mid/>
+        <Mid/>
         </div>
       </div>
     );

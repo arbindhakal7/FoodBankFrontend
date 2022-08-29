@@ -90,7 +90,6 @@ export default class Register extends Component {
                       onChange={this.onChangeRegister}
                     />
                   </div>
-
                   <div class="form-group form-button">
                     <input
                       type="submit"
